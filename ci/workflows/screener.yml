@@ -1,0 +1,77 @@
+name: crypto-screener
+
+on:
+  schedule:
+    - cron: "17 6 * * 1,4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Единая очередь всех пишущих воркфлоу (пакет 02.09): автоматы, делающие
+# git push в main, пишут по очереди, а не гонками. Правка касается ТОЛЬКО
+# обвязки записи; screener.py и порядок его шагов не тронуты.
+concurrency:
+  group: repo-writers
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - env:
+          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python screener.py
+
+      - name: Save ledgers and candidates log
+        if: always()
+        run: |
+          git config user.name "screener-bot"
+          git config user.email "screener-bot@users.noreply.github.com"
+          git add positions.json tournament.json candidates_log.jsonl
+          if git diff --cached --quiet; then
+            echo "леджеры не изменились — коммитить нечего"
+            exit 0
+          fi
+          git commit -m "paper ledger + candidates log update"
+          # Три попытки rebase+push, как в funding.yml: main делят почасовой
+          # фандинг и другие автоматы, одна попытка регулярно проигрывает
+          # гонку — а потерянный коммит леджеров означает потерянный шаг
+          # форвард-теста.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash && git push; then
+              echo "запушено с попытки $attempt"
+              exit 0
+            fi
+            echo "push не прошёл (попытка $attempt), ждём и пробуем снова"
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          echo "ОШИБКА: не удалось запушить леджеры"
+          exit 1
+
+      # С-20: токен только через env, печатаем только HTTP-код ответа —
+      # тело может процитировать URL запроса, а в нём сидит токен.
+      - name: Alarm to Telegram on failure
+        if: failure()
+        env:
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 -X POST \
+            "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+            -d chat_id="${TG_CHAT}" \
+            -d text="ТРЕВОГА: скринер УПАЛ. Лог: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}")
+          echo "Telegram ответил кодом ${code}"

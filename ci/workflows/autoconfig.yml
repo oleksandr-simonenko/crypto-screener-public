@@ -1,0 +1,77 @@
+name: autoconfig
+
+on:
+  schedule:
+    - cron: "17 5 * * 5"   # пятница 05:17 UTC (~07:17 у тебя)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Единая очередь всех пишущих воркфлоу (пакет 02.09; раньше стоял в группе
+# "screener" вместе с backtest — backtest в репозиторий не пишет и в очереди
+# писателей не нуждается).
+concurrency:
+  group: repo-writers
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run autoconfig
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python autoconfig.py
+
+      - name: Commit config
+        run: |
+          git config user.name "screener-bot"
+          git config user.email "screener-bot@users.noreply.github.com"
+          git add config.yaml
+          if git diff --cached --quiet; then
+            echo "config.yaml не изменился — коммитить нечего"
+            exit 0
+          fi
+          git commit -m "autoconfig update"
+          # Три попытки rebase+push, как в funding.yml: main делят почасовой
+          # фандинг и другие автоматы, одна попытка регулярно проигрывает гонку.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash && git push; then
+              echo "запушено с попытки $attempt"
+              exit 0
+            fi
+            echo "push не прошёл (попытка $attempt), ждём и пробуем снова"
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          echo "ОШИБКА: не удалось запушить config.yaml"
+          exit 1
+
+      # С-20: токен только через env, печатаем только HTTP-код ответа —
+      # тело может процитировать URL запроса, а в нём сидит токен.
+      - name: Alarm to Telegram on failure
+        if: failure()
+        env:
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 -X POST \
+            "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+            -d chat_id="${TG_CHAT}" \
+            -d text="ТРЕВОГА: autoconfig УПАЛ. Лог: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}")
+          echo "Telegram ответил кодом ${code}"

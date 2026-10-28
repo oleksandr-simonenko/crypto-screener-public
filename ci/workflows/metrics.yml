@@ -1,0 +1,113 @@
+# =====================================================================
+# ПЕРЕСЧЁТ МЕТРИК И ВЕРДИКТА (блоки A2/A3/A4, C1/C2, D3, E1)
+#
+# ЗАЧЕМ ОТДЕЛЬНЫЙ ВОРКФЛОУ, А НЕ ШАГ В screener.yml
+# Логика скринера заморожена до 15.11.2026, и трогать его воркфлоу ради
+# обвязки — лишний риск в файле, от которого зависит сам сбор данных.
+# Измерение живёт отдельно от сбора: если пересчёт метрик упадёт, прогон
+# скринера и запись позиций от этого не пострадают.
+#
+# ПОЧЕМУ ЭТО ВООБЩЕ НУЖНО (находка ревизии 01.09.2026)
+# Аудитор читает artifacts/metrics_latest.json, а его НИКТО не создавал на
+# Actions: metrics.py существовал, но не запускался нигде, кроме машины
+# пилота. В таком виде блоки A4 (тренд no_perp в аудит), B2 (что изменилось
+# с прошлой недели) и C3 (sha256 правил в аудит) были бы мертвы в бою —
+# работали бы в тестах и молчали на боевом прогоне.
+#
+# 07:17 UTC пн/чт — через час после скринера (06:17): к этому моменту его
+# коммит с новыми позициями уже в main, и метрики считаются по свежим данным.
+# =====================================================================
+name: metrics-verdict
+
+on:
+  schedule:
+    - cron: "17 7 * * 1,4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Единая очередь всех пишущих воркфлоу (пакет 02.09): автоматы, делающие
+# git push в main, пишут по очереди, а не гонками.
+concurrency:
+  group: repo-writers
+  cancel-in-progress: false
+
+jobs:
+  recompute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Забрать код репозитория
+        uses: actions/checkout@v5
+
+      - name: Поставить Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Поставить зависимости
+        run: pip install -r requirements.txt
+
+      # Селфтесты ПЕРЕД расчётом, а не после: считать метрики сломанным
+      # кодом и класть результат в репозиторий хуже, чем не считать вовсе.
+      - name: Селфтесты
+        run: python -m unittest discover -s tests -t . -v
+
+      - name: Метрики (A2/A3/A4)
+        run: python metrics.py
+
+      - name: Вердикт и мощность (C1/C2)
+        run: python verdict_1511.py
+
+      - name: Единая схема сделок (D3)
+        run: python export_trades.py
+
+      # Светофор ПОСЛЕДНИМ: он проверяет в том числе свежесть артефактов,
+      # которые создали шаги выше. Код возврата 1 на RED уронит job и
+      # поднимет тревогу — это и есть «провал = письмо» из блока E1.
+      - name: Светофор (E1)
+        run: python sanity.py
+
+      - name: Закоммитить артефакты
+        if: always()
+        run: |
+          git config user.name "metrics-bot"
+          git config user.email "metrics-bot@users.noreply.github.com"
+          if [ ! -d artifacts ]; then
+            echo "каталога artifacts нет — считать было нечего"
+            exit 0
+          fi
+          # Явный список: каталоги data/ пишут логгеры своими воркфлоу,
+          # подписывать их файлы этим коммитом нельзя.
+          git add artifacts export/flows_latest.csv export/flows_latest.meta.json
+          if git diff --cached --quiet; then
+            echo "артефакты не изменились — коммитить нечего"
+            exit 0
+          fi
+          git commit -m "metrics + verdict recompute"
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash && git push; then
+              echo "запушено с попытки $attempt"
+              exit 0
+            fi
+            echo "push не прошёл (попытка $attempt)"
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          echo "ОШИБКА: не удалось запушить артефакты"
+          exit 1
+
+      # С-20: токен только через env, печатаем только HTTP-код ответа —
+      # тело может процитировать URL запроса, а в нём сидит токен.
+      - name: Тревога в Telegram при сбое
+        if: failure()
+        env:
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 -X POST \
+            "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+            -d chat_id="${TG_CHAT}" \
+            -d text="ТРЕВОГА: metrics-verdict УПАЛ. Возможные причины: сломаны селфтесты, светофор дал RED, или не прошёл push. Аудитор в субботу прочитает СТАРЫЕ числа — смотри лог: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}")
+          echo "Telegram ответил кодом ${code}"

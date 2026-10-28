@@ -1,0 +1,699 @@
+{
+  "kind": "verdict_1511",
+  "as_of": "2026-10-26",
+  "verdict_date": "2026-11-15",
+  "provenance": {
+    "git_sha": "30d87fcda937",
+    "generated_utc": "2026-10-26T14:16:58Z",
+    "tool_version": "1.0.0",
+    "python": "3.12.15"
+  },
+  "rules_sha256": "80a3f55a0934c270e1dde5e793e430e003ea0b2149600d270f734b5ec944bd2a",
+  "rules_addendum": {
+    "file": "tournament_rules_addendum_1.md",
+    "available": true,
+    "sha256": "307889450ffff031b6f5968105eb53733ddf0c6e25107f5e40c40f64ead1e2b4",
+    "sha256_lf": "307889450ffff031b6f5968105eb53733ddf0c6e25107f5e40c40f64ead1e2b4",
+    "number": 1,
+    "adopted": "2026-09-02",
+    "applies_before_first_closures": [
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "declared_tracks": [
+      "A6"
+    ],
+    "observational_tracks": [
+      "A6"
+    ],
+    "applied": true,
+    "preregistered": true,
+    "preregistration_note": "принята 2026-09-02, первая закрытая сделка 2026-09-14 — до результатов",
+    "first_exit_date": "2026-09-14",
+    "rules_v1_sha256_pinned": "80a3f55a0934c270e1dde5e793e430e003ea0b2149600d270f734b5ec944bd2a",
+    "pin_matches": true,
+    "warnings": [],
+    "error": null
+  },
+  "rules_addendum_sha256": "307889450ffff031b6f5968105eb53733ddf0c6e25107f5e40c40f64ead1e2b4",
+  "design_lock": {
+    "present": true,
+    "design": "run",
+    "confirmed_on": "2026-09-03",
+    "confirmed_by": "навигатор (пакет СКРИНЕР-ДОВОДКА-03.09, задача С-01)",
+    "before_first_closures": [
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "basis": "§3.1: полных блоков «блок = токен» к 15.11 — ноль по замеру 01.09.2026 (STATE.md §8); N < 10 включает запасной дизайн",
+    "first_exit_date": "2026-09-14",
+    "preregistered": true,
+    "applied": true,
+    "note": "подтверждён 2026-09-03, первая закрытая сделка 2026-09-14 — до результатов; дизайн «блок = прогон» зафиксирован и по фактическому N не пересчитывается"
+  },
+  "costs_config_used": {
+    "path": "costs.yaml",
+    "version": 1,
+    "instrument": "spot",
+    "taker_fee_bps": 20.0,
+    "slippage_bps_by_class": {
+      "deep": 15.0,
+      "medium": 40.0,
+      "thin": 100.0
+    },
+    "sensitivity_multipliers": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "sensitivity_applies_to": "all",
+    "headline_mult": 1.0,
+    "slippage_is_assumption": true
+  },
+  "trades_source": {
+    "source": "trades.load_all_trades",
+    "trades_module_available": true,
+    "warning": null
+  },
+  "n_trades_total": 780,
+  "n_closed_total": 412,
+  "bucket_mismatch_n": 0,
+  "alpha": 0.05,
+  "result": {
+    "mult": 1.0,
+    "alpha": 0.05,
+    "control_track": "A7",
+    "notes": [
+      "§1: A0 исключена из статистического теста по устройству протокола (другая дата входа), закрытых у A0: 38 — она идёт только во второй порог §6",
+      "поправка №1: A6 — наблюдательные дорожки, ВНЕ подтверждающего семейства; считаются описательно, в k/N/ранги не входят"
+    ],
+    "a0_closed_n": 38,
+    "per_track_closed": {
+      "A1": 56,
+      "A2": 60,
+      "A3": 60,
+      "A4": 60,
+      "A5": 60,
+      "A6": 21,
+      "A7": 57,
+      "A8": 0
+    },
+    "observational_tracks": [
+      "A6"
+    ],
+    "excluded_tracks": [
+      {
+        "track": "A8",
+        "reason": "нет ни одной закрытой позиции к дате вердикта (§3.1) — исключение по факту пустоты, а не по результату"
+      }
+    ],
+    "participating": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A7"
+    ],
+    "k": 6,
+    "observational": {
+      "A6": {
+        "n_closed": 21,
+        "mean_net": 8.720080952380952,
+        "median_net": 7.1648,
+        "q1_net": -10.5984,
+        "q3_net": 20.7312,
+        "iqr_net": 31.3296,
+        "win_rate": 0.6190476190476191,
+        "sum_net": 183.1217,
+        "note": "вне теста (поправка №1): описательно, в k/N/ранги не входит; ни p-value, ни победителя"
+      }
+    },
+    "liq_class_fallback_n": 130,
+    "n_blocks_token": 0,
+    "n_blocks_run": 12,
+    "partial_blocks_token": 217,
+    "partial_blocks_run": 0,
+    "design_by_rule": "run",
+    "design_conflict_line": null,
+    "design_locked": true,
+    "design_lock": {
+      "design": "run",
+      "confirmed_on": "2026-09-03",
+      "confirmed_by": "навигатор (пакет СКРИНЕР-ДОВОДКА-03.09, задача С-01)",
+      "before_first_closures": [
+        "2026-09-14",
+        "2026-09-21"
+      ],
+      "basis": "§3.1: полных блоков «блок = токен» к 15.11 — ноль по замеру 01.09.2026 (STATE.md §8); N < 10 включает запасной дизайн"
+    },
+    "design_conflict": false,
+    "design_reason": "дизайн ЗАФИКСИРОВАН флагом 2026-09-03 (навигатор (пакет СКРИНЕР-ДОВОДКА-03.09, задача С-01)): «блок = прогон», после первых закрытий по фактическому N не пересчитывается; по §3.1 сейчас: полных блоков-токенов N=0 < 10 — ПЕРЕКЛЮЧЕНИЕ на ЗАПАСНОЙ дизайн «блок = прогон» (§3.1, зафиксирован заранее; переключение зависит ТОЛЬКО от N, ранги на этот момент не считались)",
+    "design_switched": true,
+    "design": "run",
+    "N": 12,
+    "block_keys": [
+      "2026-07-20",
+      "2026-07-23",
+      "2026-07-27",
+      "2026-07-30",
+      "2026-08-03",
+      "2026-08-06",
+      "2026-08-10",
+      "2026-08-13",
+      "2026-08-17",
+      "2026-08-20",
+      "2026-08-24",
+      "2026-08-27"
+    ],
+    "mean_net_by_track": {
+      "A1": 10.29080357142857,
+      "A2": 55.69889333333333,
+      "A3": 15.159961666666668,
+      "A4": 3.98256,
+      "A5": 11.064428333333332,
+      "A7": 11.819431578947368
+    },
+    "median_net_by_track": {
+      "A1": 8.0425,
+      "A2": 0.015850000000000003,
+      "A3": -0.6432,
+      "A4": 2.6183,
+      "A5": -2.13985,
+      "A7": 12.8296
+    },
+    "n_closed_by_track": {
+      "A1": 56,
+      "A2": 60,
+      "A3": 60,
+      "A4": 60,
+      "A5": 60,
+      "A7": 57
+    },
+    "power_reference_effect": 1.0,
+    "power_threshold": 0.5,
+    "blockers": [],
+    "friedman": {
+      "chi2": 3.3809523809523916,
+      "df": 5,
+      "p": 0.6414725229696359,
+      "role": "КОНТРОЛЬНЫЙ (§3.3) — вердикт по нему не выносится"
+    },
+    "iman_davenport": {
+      "F": 0.6568544995794808,
+      "df1": 5,
+      "df2": 55,
+      "p": 0.6575746583191798,
+      "degenerate": false,
+      "role": "ГЛАВНЫЙ (§3.4) — вердикт выносится по нему"
+    },
+    "mean_ranks": {
+      "A1": 3.4166666666666665,
+      "A2": 3.0833333333333335,
+      "A3": 3.5,
+      "A4": 4.333333333333333,
+      "A5": 3.5,
+      "A7": 3.1666666666666665
+    },
+    "h0_rejected": false,
+    "h0_rejected_friedman": false,
+    "tests_agree": true,
+    "disagreement_line": null,
+    "posthoc": null,
+    "posthoc_note": "§4: k-1 пар, каждое сито ПРОТИВ A7; пары сит между собой НЕ считаются. p двустороннее (2*normal_sf(|z|)); победителем объявляется только сито, которое и прошло Холма, И имеет средний ранг ЛУЧШЕ контроля.",
+    "power_reference": 0.26625,
+    "verdict_kind": "no_diff",
+    "winner": null,
+    "winner_p": null,
+    "verdict_line": "различий с случайным нет",
+    "verdict_reason": "§5 ветка 1: H0 не отвергнута (p=0.6576). Дорожка с лучшим средним рангом победителем НЕ объявляется — это шум.",
+    "insufficient_data": true,
+    "insufficient_data_line": "данных мало: N=12, мощность ниже порога",
+    "insufficient_data_reason": "мощность при k=6 и N=12 против эффекта 1.00 сигмы = 0.27 < порога 0.50: на таком N «эффекта нет» и «данных не хватило» неразличимы",
+    "best_mean_rank_track": "A2",
+    "best_mean_rank_note": "лучший средний ранг при неотвергнутой H0, то есть шум"
+  },
+  "paragraph6": {
+    "mult": 1.0,
+    "edge_pp": 5.0,
+    "min_closed": 30,
+    "halves_basis": "exit_date дорожек турнира (A0 в определении границы НЕ участвует, но измеряется в тех же половинах), середина фактического диапазона выходов",
+    "control_track": "A7",
+    "portfolio_track": "A0",
+    "computable": true,
+    "per_track": {
+      "A1": {
+        "n_closed": 56,
+        "mean_net": 10.29080357142857,
+        "delta_vs_control_pp": -1.5286280075187975,
+        "delta_vs_portfolio_pp": 6.033208834586465,
+        "half1_mean": 17.597396666666665,
+        "half2_mean": 1.860119230769231,
+        "checks": {
+          "n_closed_ge_30": true,
+          "beats_control_by_5pp": false,
+          "beats_portfolio_by_5pp": true,
+          "leads_half1": true,
+          "leads_half2": false
+        },
+        "observational": false,
+        "passed": false
+      },
+      "A2": {
+        "n_closed": 60,
+        "mean_net": 55.69889333333333,
+        "delta_vs_control_pp": 43.879461754385964,
+        "delta_vs_portfolio_pp": 51.44129859649122,
+        "half1_mean": 92.82365666666666,
+        "half2_mean": 18.574130000000004,
+        "checks": {
+          "n_closed_ge_30": true,
+          "beats_control_by_5pp": true,
+          "beats_portfolio_by_5pp": true,
+          "leads_half1": true,
+          "leads_half2": true
+        },
+        "observational": false,
+        "passed": true
+      },
+      "A3": {
+        "n_closed": 60,
+        "mean_net": 15.159961666666668,
+        "delta_vs_control_pp": 3.3405300877192996,
+        "delta_vs_portfolio_pp": 10.902366929824563,
+        "half1_mean": 16.16751,
+        "half2_mean": 14.152413333333335,
+        "checks": {
+          "n_closed_ge_30": true,
+          "beats_control_by_5pp": false,
+          "beats_portfolio_by_5pp": true,
+          "leads_half1": true,
+          "leads_half2": true
+        },
+        "observational": false,
+        "passed": false
+      },
+      "A4": {
+        "n_closed": 60,
+        "mean_net": 3.98256,
+        "delta_vs_control_pp": -7.836871578947369,
+        "delta_vs_portfolio_pp": -0.2750347368421058,
+        "half1_mean": 13.799559999999998,
+        "half2_mean": -5.83444,
+        "checks": {
+          "n_closed_ge_30": true,
+          "beats_control_by_5pp": false,
+          "beats_portfolio_by_5pp": false,
+          "leads_half1": true,
+          "leads_half2": false
+        },
+        "observational": false,
+        "passed": false
+      },
+      "A5": {
+        "n_closed": 60,
+        "mean_net": 11.064428333333332,
+        "delta_vs_control_pp": -0.7550032456140361,
+        "delta_vs_portfolio_pp": 6.806833596491226,
+        "half1_mean": 14.926536666666667,
+        "half2_mean": 7.202319999999999,
+        "checks": {
+          "n_closed_ge_30": true,
+          "beats_control_by_5pp": false,
+          "beats_portfolio_by_5pp": true,
+          "leads_half1": true,
+          "leads_half2": false
+        },
+        "observational": false,
+        "passed": false
+      },
+      "A6": {
+        "n_closed": 21,
+        "mean_net": 8.720080952380952,
+        "delta_vs_control_pp": -3.099350626566416,
+        "delta_vs_portfolio_pp": 4.4624862155388465,
+        "half1_mean": 17.763927272727273,
+        "half2_mean": -1.2281499999999999,
+        "checks": {
+          "n_closed_ge_30": false,
+          "beats_control_by_5pp": false,
+          "beats_portfolio_by_5pp": false,
+          "leads_half1": true,
+          "leads_half2": false
+        },
+        "observational": true,
+        "passed": false
+      },
+      "A7": {
+        "n_closed": 57,
+        "mean_net": 11.819431578947368,
+        "delta_vs_control_pp": 0.0,
+        "delta_vs_portfolio_pp": 7.561836842105262,
+        "half1_mean": 10.256499999999999,
+        "half2_mean": 13.328468965517242,
+        "checks": {
+          "n_closed_ge_30": true,
+          "beats_control_by_5pp": false,
+          "beats_portfolio_by_5pp": true,
+          "leads_half1": false,
+          "leads_half2": false
+        },
+        "observational": false,
+        "passed": false
+      },
+      "A8": {
+        "n_closed": 0,
+        "mean_net": null,
+        "delta_vs_control_pp": null,
+        "delta_vs_portfolio_pp": null,
+        "half1_mean": null,
+        "half2_mean": null,
+        "checks": {
+          "n_closed_ge_30": false,
+          "beats_control_by_5pp": false,
+          "beats_portfolio_by_5pp": false,
+          "leads_half1": false,
+          "leads_half2": false
+        },
+        "observational": false,
+        "passed": false
+      }
+    },
+    "passed_tracks": [
+      "A2"
+    ],
+    "observational_tracks": [
+      "A6"
+    ],
+    "note": null,
+    "half1": [
+      "2026-09-21",
+      "2026-10-08"
+    ],
+    "half2": [
+      "2026-10-09",
+      "2026-10-26"
+    ],
+    "control_mean_net": 11.819431578947368,
+    "portfolio_mean_net": 4.257594736842106,
+    "control_halves": {
+      "half1": 10.256499999999999,
+      "half2": 13.328468965517242
+    },
+    "portfolio_halves": {
+      "half1": 7.493372000000001,
+      "half2": -1.9650538461538465
+    }
+  },
+  "paragraph7": {
+    "mult": 1.0,
+    "source": "positions.json, дорожка A0 (единственная с теневыми стопами)",
+    "check_frequency_note": "срабатывание стопа проверяется с частотой прогонов пн/чт, а не ежедневно — правило грубее дневной симуляции",
+    "available": true,
+    "n": 38,
+    "rules": {
+      "passive": {
+        "n": 38,
+        "mean_net_pct": 4.257594736842106,
+        "median_net_pct": 1.9761
+      },
+      "stop20": {
+        "n": 38,
+        "mean_net_pct": -3.518694736842105,
+        "median_net_pct": -15.616399999999999
+      },
+      "stop30": {
+        "n": 38,
+        "mean_net_pct": 0.7779473684210532,
+        "median_net_pct": -7.1625
+      }
+    },
+    "paired_vs_passive": {
+      "stop20": {
+        "n_pairs": 38,
+        "mean_diff_pp": -7.776289473684209,
+        "median_diff_pp": 0.0,
+        "n_better": 9,
+        "n_worse": 18,
+        "n_equal": 11,
+        "sign_test_n": 27,
+        "sign_test_p": 0.12207812070846558,
+        "significant_at_005": false
+      },
+      "stop30": {
+        "n_pairs": 38,
+        "mean_diff_pp": -3.4796473684210523,
+        "median_diff_pp": 0.0,
+        "n_better": 6,
+        "n_worse": 9,
+        "n_equal": 23,
+        "sign_test_n": 15,
+        "sign_test_p": 0.60723876953125,
+        "significant_at_005": false
+      }
+    },
+    "verdict_line": "различие стопа -20% и пассива статистически не показано (знаковый тест p=0.1221, n=27)",
+    "note": null
+  },
+  "sensitivity": [
+    {
+      "mult": 0.5,
+      "verdict_line": "различий с случайным нет",
+      "verdict_kind": "no_diff",
+      "insufficient_data": true,
+      "winner": null,
+      "p_main": 0.6575746583191798,
+      "N": 12,
+      "design": "run",
+      "p6_passed_tracks": [
+        "A2"
+      ],
+      "mean_net_by_track": {
+        "A1": 11.0659375,
+        "A2": 56.54944666666667,
+        "A3": 16.163314166666666,
+        "A4": 4.7479466666666665,
+        "A5": 11.828880833333333,
+        "A7": 12.788663157894737
+      },
+      "median_net_by_track": {
+        "A1": 8.767975,
+        "A2": 0.8748,
+        "A3": 0.5784,
+        "A4": 3.10915,
+        "A5": -1.794925,
+        "A7": 13.5148
+      }
+    },
+    {
+      "mult": 1.0,
+      "verdict_line": "различий с случайным нет",
+      "verdict_kind": "no_diff",
+      "insufficient_data": true,
+      "winner": null,
+      "p_main": 0.6575746583191798,
+      "N": 12,
+      "design": "run",
+      "p6_passed_tracks": [
+        "A2"
+      ],
+      "mean_net_by_track": {
+        "A1": 10.29080357142857,
+        "A2": 55.69889333333333,
+        "A3": 15.159961666666668,
+        "A4": 3.98256,
+        "A5": 11.064428333333332,
+        "A7": 11.819431578947368
+      },
+      "median_net_by_track": {
+        "A1": 8.0425,
+        "A2": 0.015850000000000003,
+        "A3": -0.6432,
+        "A4": 2.6183,
+        "A5": -2.13985,
+        "A7": 12.8296
+      }
+    },
+    {
+      "mult": 2.0,
+      "verdict_line": "различий с случайным нет",
+      "verdict_kind": "no_diff",
+      "insufficient_data": true,
+      "winner": null,
+      "p_main": 0.6575746583191798,
+      "N": 12,
+      "design": "run",
+      "p6_passed_tracks": [
+        "A2"
+      ],
+      "mean_net_by_track": {
+        "A1": 8.740535714285715,
+        "A2": 53.99778666666666,
+        "A3": 13.153256666666666,
+        "A4": 2.4517866666666666,
+        "A5": 9.535523333333334,
+        "A7": 9.880968421052632
+      },
+      "median_net_by_track": {
+        "A1": 6.148,
+        "A2": -1.0056,
+        "A3": -3.0384,
+        "A4": 1.6366,
+        "A5": -2.8297,
+        "A7": 11.4592
+      }
+    }
+  ],
+  "verdict_stable_across_costs": true,
+  "sensitivity_alarm": null,
+  "power": {
+    "by_effect": {
+      "0.25": 0.011,
+      "0.5": 0.046,
+      "0.75": 0.1255,
+      "1.0": 0.251,
+      "1.5": 0.6075,
+      "2.0": 0.8665
+    },
+    "n_sims": 2000,
+    "seed": 20261115,
+    "k": 6,
+    "N": 12,
+    "alpha": 0.05,
+    "threshold": 0.5,
+    "control_index": 5,
+    "computable": true,
+    "note": "симуляция на нормальных откликах — грубая оценка порядка величины, не замер; порог мощности объявлен явно: 0.50"
+  },
+  "power_projected": {
+    "by_effect": {
+      "0.25": 0.011,
+      "0.5": 0.046,
+      "0.75": 0.1255,
+      "1.0": 0.251,
+      "1.5": 0.6075,
+      "2.0": 0.8665
+    },
+    "n_sims": 2000,
+    "seed": 20261115,
+    "k": 6,
+    "N": 12,
+    "alpha": 0.05,
+    "threshold": 0.5,
+    "control_index": 5,
+    "computable": true,
+    "note": "симуляция на нормальных откликах — грубая оценка порядка величины, не замер; порог мощности объявлен явно: 0.50",
+    "design": "run",
+    "participating": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A7"
+    ],
+    "observational": [
+      "A6"
+    ],
+    "reference": {
+      "by_effect": {
+        "0.25": 0.006,
+        "0.5": 0.03,
+        "0.75": 0.0635,
+        "1.0": 0.1385,
+        "1.5": 0.36,
+        "2.0": 0.633
+      },
+      "n_sims": 2000,
+      "seed": 20261115,
+      "k": 7,
+      "N": 9,
+      "alpha": 0.05,
+      "threshold": 0.5,
+      "control_index": 6,
+      "computable": true,
+      "note": "симуляция на нормальных откликах — грубая оценка порядка величины, не замер; порог мощности объявлен явно: 0.50",
+      "participating": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7"
+      ],
+      "label": "семейство с наблюдательными дорожками A6 (прежний счёт, до поправки)"
+    }
+  },
+  "projection": {
+    "as_of": "2026-10-26",
+    "verdict_date": "2026-11-15",
+    "last_run_date": "2026-11-12",
+    "per_track_closed": {
+      "A1": 60,
+      "A2": 60,
+      "A3": 60,
+      "A4": 60,
+      "A5": 60,
+      "A6": 25,
+      "A7": 60,
+      "A8": 0
+    },
+    "already_closed": {
+      "A1": 56,
+      "A2": 60,
+      "A3": 60,
+      "A4": 60,
+      "A5": 60,
+      "A6": 21,
+      "A7": 57,
+      "A8": 0
+    },
+    "blocks_token": 0,
+    "blocks_run": 12,
+    "design_that_applies": "run",
+    "design_by_rule": "run",
+    "design_locked": true,
+    "design_conflict": false,
+    "participating": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A7"
+    ],
+    "excluded_empty": [
+      "A8"
+    ],
+    "observational": [
+      "A6"
+    ],
+    "reference": {
+      "label": "семейство с наблюдательными дорожками A6 (прежний счёт, до поправки)",
+      "tracks": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7"
+      ],
+      "blocks_token": 0,
+      "blocks_run": 9
+    },
+    "source": "/home/runner/work/crypto-screener/crypto-screener/tournament.json",
+    "available": true,
+    "assumptions": [
+      "закрытие по miss>=2 не моделируется (цен будущего нет) — оценка нижняя",
+      "новые позиции после as_of не учитываются (предохранитель 60 открытых)"
+    ]
+  },
+  "money_allowed": false,
+  "money_rule": "деньги разрешены ТОЛЬКО при одновременном выполнении §5 ветка 2 с победителем И §6 (второй порог протокола)",
+  "verdict_line": "различий с случайным нет",
+  "insufficient_data": true,
+  "insufficient_data_line": "данных мало: N=12, мощность ниже порога",
+  "note": "все числа посчитаны кодом по замороженным правилам screener_tournament_rules_v1.md; net опирается на ДОПУЩЕНИЕ о слиппедже, поэтому вердикт напечатан при каждом множителе чувствительности"
+}

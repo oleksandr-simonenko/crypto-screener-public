@@ -1,0 +1,62 @@
+name: revolut-scan
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+# Единая очередь всех пишущих воркфлоу (пакет 02.09): автоматы, делающие
+# git push в main, пишут по очереди, а не гонками.
+concurrency:
+  group: repo-writers
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - env:
+          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python revolut_scan.py
+      - name: Save scan state and report
+        if: always()
+        run: |
+          git config user.name "screener-bot"
+          git config user.email "screener-bot@users.noreply.github.com"
+          git add scan_state.json revolut_scan_report.md
+          if git diff --cached --quiet; then
+            echo "состояние скана не изменилось — коммитить нечего"
+            exit 0
+          fi
+          git commit -m "revolut scan update"
+          # Три попытки rebase+push, как в funding.yml: main делят почасовой
+          # фандинг и другие автоматы, одна попытка регулярно проигрывает гонку.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash && git push; then
+              echo "запушено с попытки $attempt"
+              exit 0
+            fi
+            echo "push не прошёл (попытка $attempt), ждём и пробуем снова"
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          echo "ОШИБКА: не удалось запушить состояние скана"
+          exit 1
+      # С-20: токен только через env, печатаем только HTTP-код ответа —
+      # тело может процитировать URL запроса, а в нём сидит токен.
+      - name: Alarm to Telegram on failure
+        if: failure()
+        env:
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 -X POST \
+            "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+            -d chat_id="${TG_CHAT}" \
+            -d text="ТРЕВОГА: revolut-scan УПАЛ (чекпоинт сохранён — перезапусти, продолжит с места). Лог: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}")
+          echo "Telegram ответил кодом ${code}"

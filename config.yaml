@@ -1,0 +1,155 @@
+# =====================================================================
+# КОНФИГ СКРИНЕРА v2 — здесь всё, что скрипт не может узнать сам.
+# Обновляй watchlist/blacklist раз в 1–2 недели (или проси Claude
+# в чате: «обнови мне config.yaml по свежим новостям»).
+# Заполнено по данным на 12.07.2026.
+# =====================================================================
+
+# --- Окно поиска ------------------------------------------------------
+mcap_min: 5000000          # $5M  — ниже неликвид
+mcap_max: 150000000        # $150M — выше окно «до взрыва» уже закрыто
+float_full_points: 0.35    # флоат <=35% = максимум баллов (у BEAT было 28.8%)
+float_hard_max: 0.55       # флоат >55% = выбраковка
+top_n: 15                  # сколько строк слать в Telegram
+min_score: 45              # ниже порога в отчёт не попадают (лучше пусто, чем шум)
+
+# --- Ручные бусты -----------------------------------------------------
+# burn_verified: true      -> +10 баллов (ты сам видел burn-tx он-чейн)
+# catalyst: "ГГГГ-ММ-ДД"   -> +10 баллов, если дата в ближайшие 8 недель
+# catalyst_note: "текст"   -> подпись катализатора в отчёте
+# whale_accumulation: true -> +5 баллов (Arkham/держатели растут)
+watchlist:
+  BTT:
+    burn_type: burn
+    burn_verified: true
+    catalyst: null
+    catalyst_note: 'ИСПОЛНЕНО: 16.10.2026 первый квартальный buyback-and-burn из 100%
+      выручки децентрализованных сервисов за Q3 2026 — 21,621,611,570,729.6 BTT (~$7,600,907,
+      ~2.18% total supply), токены отправлены на burn-адрес, tx-хеш в сети TRON 4d9596617780e329bbd4e644ee0dffd780ec4cf3749f324d03eb98157eb04ae5
+      (crypto.news/KuCoin/TheCurrencyAnalytics 17-20.10.2026; пресс-релиз GlobeNewswire
+      18-19.10.2026) — burn_verified true, burn_type burn (сожжение безвозвратное);
+      запущен официальный дашборд buyback-and-burn, следующие публикации объёмов и ончейн-записей
+      — около середины первого месяца каждого следующего квартала (ориентир ~середина
+      января 2027), что вне 8-недельного окна, точной даты нет — catalyst null (сверено
+      23.10.2026)'
+  EDGE:
+    burn_type: burn
+    burn_verified: true
+    catalyst: null
+    catalyst_note: 'buyback-and-burn из выручки: выкупленный EDGE сжигается каждые 24
+      часа с ончейн-публикацией (Foresight News/edgeX 03.04.2026, 2.52837M EDGE на старте);
+      официальный дашборд pro.edgex.exchange/tokenomics: Buyback Burn 4.86% (нач. окт.)
+      → 4.93% на 08.10.2026 (TokenPost) → 4.94% supply сожжено при $47.3M выкупа из
+      торговых комиссий с апреля (innmind, 12.10.2026) — рост метрики подтверждает бёрны
+      в 30-дневном окне; риск: объём выкупа падает ($23.4M в апреле → $0.6M в сентябре
+      вслед за комиссиями $22.2M → $4.2M); ближайшие инсайдерские анлоки только с марта
+      2027 (DropsTab), V2-апгрейд без объявленной даты — конкретных catalyst-дат в 8-недельном
+      окне нет (сверено 23.10.2026)'
+  HEI:
+    burn_verified: false
+    catalyst_note: 'последний подтверждённый бёрн — 16.5M HEI (~17% circulating), исполнен
+      ончейн 17.07.2026, circulating упал с 97.76M до 81.26M (CoinMarketCap AI/0xNox);
+      сверено 23.10.2026: событие вне 30-дневного окна, новых ончейн-бёрнов не найдено
+      — burn_verified false; catalyst-дат в 8-недельном окне нет'
+  VVV:
+    burn_type: burn
+    burn_verified: true
+    catalyst: null
+    catalyst_note: 'ончейн-бёрны продолжаются в 30-дневном окне: по данным burn-кошелька
+      в сети Base за 01-17.10.2026 и Tokenomist — ежедневные бёрны из выручки (5% с
+      каждой покупки API-кредитов, ~10% с подписок) плюс дискреционный бёрн 16,124 VVV
+      (оценка Venice ~$414K), исполненный 07.10.2026 (insights.unlocks.app 19.10.2026);
+      TokenPost 22.10.2026: за период по 21.10 сожжено 41,000 VVV при 164,000 эмитированных
+      (бёрн пока не перекрывает эмиссию); этап эмиссии 2.5M→2M VVV/год исполнен 01.10.2026,
+      виден ончейн на basescan (Crypto Briefing 01.10.2026), новых дат снижения эмиссии
+      не объявлено — catalyst null (сверено 23.10.2026)'
+
+# --- Каталог Revolut (для значка в отчёте) -----------------------------
+# ПОЛНЫЙ каталог Revolut Norge на 11.07.2026 — 305 позиций из приложения.
+# В конфиге 304: EDGE исключён сознательно — на Revolut под этим тикером
+# торгуется Definitive, а скринер отслеживает edgeX (другой проект, тот же
+# тикер). Показывать значок на edgeX было бы ложью.
+# AI в каталоге = Gensyn; TON = Gram (экс-Toncoin). Тикеры не уникальны.
+# Каталог живой (листинги/делистинги) — обновляй свежей вставкой из чата.
+revolut_symbols: [
+  "BTC", "ETH", "USDT", "BNB", "USDC", "XRP", "SOL", "TRX", "HYPE", "DOGE",
+  "XLM", "ADA", "LINK", "CC", "BCH", "LTC", "HBAR", "SUI", "AVAX", "SHIB",
+  "CRO", "NEAR", "UNI", "WLFI", "ONDO", "DOT", "AAVE", "MORPHO", "SKY",
+  "WLD", "ICP", "PEPE", "ETC", "QNT", "POL", "ATOM", "RENDER", "ENA",
+  "ALGO", "JUP", "VET", "PENGU", "TRUMP", "TIA", "PYTH", "BONK", "FET",
+  "SPX", "SEI", "ZRO", "CRV", "STX", "JTO", "MON", "PENDLE", "XTZ", "LDO",
+  "2Z", "GRASS", "JASMY", "FLOKI", "OP", "SYRUP", "STRK", "GRT", "MSOL",
+  "RAY", "AKT", "CHZ", "EIGEN", "FIL", "PUMP", "ARB", "FLR", "XDC", "VVV",
+  "APT", "AERO", "INJ", "DASH", "AXS", "ENS", "COMP", "APE", "WIF", "KAITO",
+  "XCN", "MANA", "SNX", "SAND", "GLM", "ATH", "EGLD", "SAFE", "BEAM", "COW",
+  "RSR", "LPT", "YFI", "MELANIA", "W", "BERA", "TURBO", "MINA", "SUPER",
+  "DEGEN", "BLUR", "SPK", "WAXL", "RED", "ZRX", "ZEN", "ARKM", "ORCA",
+  "KTA", "NMR", "AIOZ", "PLUME", "IO", "KSM", "BAT", "TRAC", "AWE", "IP",
+  "IMX", "CVX", "ZK", "SENT", "GALA", "1INCH", "KAVA", "TOSHI", "ROSE",
+  "FLOW", "SUSHI", "POPCAT", "TRB", "PNUT", "XYO", "CELO", "T", "VTHO",
+  "SQD", "ANKR", "AI", "UMA", "API3", "MEW", "AVNT", "ZORA", "ILV",
+  "AUCTION", "FAI", "EUL", "COTI", "GMT", "IOTX", "ALEO", "POWR", "REZ",
+  "SKL", "ACX", "BAND", "BNT", "OSMO", "XAN", "OCEAN", "SWFTC", "NEIRO",
+  "VELO", "LCX", "DOGS", "ABT", "AUDIO", "KNC", "SXT", "RSC", "LQTY",
+  "TAIKO", "MOG", "HNT", "REQ", "MASK", "MOODENG", "AMP", "PROVE", "NOT",
+  "RPL", "ME", "STG", "RLC", "B3", "GIGA", "WOO", "PRO", "CTSI", "FIDA",
+  "METIS", "PUNDIX", "RIZE", "C98", "ZKC", "DIA", "ALICE", "PONKE",
+  "KERNEL", "LA", "OGN", "TNSR", "CVC", "SPELL", "CLANKER", "AURORA",
+  "MAGIC", "PRIME", "LAYER", "LRC", "BIGTIME", "AGLD", "L3", "DRIFT",
+  "PARTI", "TOKEN", "QI", "ARPA", "SD", "HONEY", "PYR", "POND", "NEON",
+  "RLS", "MATH", "DOGINME", "LMWR", "SPA", "ZKJ", "CXT", "DYDX", "SWELL",
+  "FORT", "HFT", "COOKIE", "ELA", "BADGER", "ASM", "TREE", "ACS", "BAL",
+  "GTC", "HOPR", "STORJ", "RARE", "RAD", "BICO", "MNDE", "CELR", "BOBA",
+  "GODS", "NCT", "OXT", "TON", "ALEPH", "FORTH", "MDT", "RARI", "BENJI",
+  "IDOS", "PERP", "IDEX", "POLS", "TAI", "ALCX", "PNG", "AVT", "KRL",
+  "PROMPT", "MLN", "NKN", "GFI", "IMU", "GST", "LRDS", "FIS", "AST",
+  "PIRATE", "TRU", "VOXEL", "FX", "PLA", "FARM", "BLZ", "SHDW", "A8",
+  "SUKU", "DIMO", "PRCL", "OFC", "GHST", "KARRAT", "AERGO", "HIGH",
+  "BTRST", "SHPING", "ACH"
+]
+
+# --- Чёрный список ----------------------------------------------------
+# Сюда — токены с разлоком >5% циркуляции в ближайшие 60 дней и прочие
+# структурные стопы. Формат: СИМВОЛ: "причина, дата"
+blacklist:
+  ERA:
+    event_date: null
+    reason: 'РЕКУРРЕНТНЫЕ РАЗЛОКИ: ежемесячные анлоки Caldera 17-го числа: 17.07.2026
+      — 77.46M ERA (7.75% total supply, ~52% mcap, DropsTab); транш 17.08.2026 — ~$1.44M,
+      +16.03% к предложению (Bitcoin News Digest 18.08.2026), Tokenomics.com оценивает
+      августовский транш в 26.4M ERA (2.6% total supply, >11% mcap); траншы 17.09.2026
+      и далее ежемесячно — исключение бессрочное, пока идёт месячный вестинг (сверено
+      2'
+  HEMI:
+    event_date: '2026-10-29'
+    reason: 'КЛАСС А: транш линейного вестинга 29.10.2026 — ~11.4% от mcap (app.tokenomics.com,
+      график разлоков HEMI); 12-мес клифф инвесторов (28%) и команды (25%) истёк 29.08.2026,
+      далее 24 мес линейно (официальный пост Hemi по вестингу) — событие в 60-дневном
+      окне (сверено 23.10.2026)'
+  KAITO:
+    event_date: null
+    reason: 'РЕКУРРЕНТНЫЕ РАЗЛОКИ: месячные транши 20-го числа; 20.08.2026 — 32.6M KAITO
+      ($11.3M), 3.26% total supply, ~13.5% циркуляции при float ~240M (DefiLlama/CoinGecko/AMBCrypto);
+      транш 20.09.2026 исполнен — ~$5.85M, 7.3% от mcap (CryptoRank), следующий ~20.10.2026;
+      разлочено 241.39M KAITO = 24.14% total supply (Tokenomist); исключение бессрочное,
+      пока идёт месячный вестинг (сверено 23.10.2026)'
+  MOVE:
+    event_date: null
+    reason: 'СТРУКТУРНЫЙ (БАНКРОТСТВО): Chapter 11 Movement Labs с 15.07.2026 (скандал
+      с маркет-мейкером); выкуп финансировался из замороженных средств, не из выручки;
+      ежемесячные анлоки ~5.18% supply; исключение бессрочное (сверено 23.10.2026, изменений
+      не найдено)'
+  PROMPT:
+    event_date: null
+    reason: 'СТРУКТУРНЫЙ (ДЕЛИСТИНГ): Binance Futures принудительно закрыла позиции
+      и делистила бессрочный контракт PROMPTUSDT 05.10.2026 (автоматический сеттлмент
+      16:30, ChainCatcher 01.10.2026; Bitcoin Sistemi 01.10.2026) — уход перп-ликвидности
+      и шорт-инфраструктуры с крупнейшей биржи; исключение бессрочное (сверено 23.10.2026,
+      новых изменений статуса не найдено)'
+  RED:
+    event_date: null
+    reason: 'РЕКУРРЕНТНЫЕ РАЗЛОКИ: ежемесячные транши RedStone 6-го числа: ~40.85M RED
+      (early backers 26.42M + core contributors 5.56M + ecosystem 5.54M + protocol dev
+      3.33M), ~8.5% циркуляции при 481M unlocked (Tokenomist 48.11%, подтверждено Yahoo/BeInCrypto
+      по траншам 06.03 и 06.05.2026; CoinMarketCap: >72% supply заблокировано, вестинг
+      4 года); транш 06.10.2026 исполнен, следующий ~06.11.2026 — исключение '

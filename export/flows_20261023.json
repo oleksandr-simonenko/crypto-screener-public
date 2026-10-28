@@ -1,0 +1,335 @@
+{
+ "generated_utc": "2026-10-23T13:22:27Z",
+ "source": "pre-BEAT screener (private repo), еженедельный экспорт",
+ "week_runs": [
+  "2026-10-19T13:34:20Z-39260584589",
+  "2026-10-22T12:05:49Z-39774945712"
+ ],
+ "note": "top_contracts: монеты из топ-15 прогонов за 7 дней, дедуп по cg_id (тикеры не уникальны!). blacklist: снапшот на момент экспорта; event_date=null = дата не подтверждена источниками, карантин бессрочный.",
+ "top_contracts": [
+  {
+   "ticker": "OPN",
+   "cg_id": "opinion",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 85,
+   "mcap_usd": 9501084,
+   "price_usd": 0.052023,
+   "entered_paper": false,
+   "contracts": {
+    "binance-smart-chain": "0x7977bf3e7e0c954d12cdca3e013adaf57e0b06e0",
+    "ethereum": "0x7977bf3e7e0c954d12cdca3e013adaf57e0b06e0"
+   }
+  },
+  {
+   "ticker": "KAT",
+   "cg_id": "katana-network-token",
+   "run_timestamp": "2026-10-19T13:34:20Z",
+   "score": 75,
+   "mcap_usd": 13850337,
+   "price_usd": 0.00411587,
+   "entered_paper": true,
+   "contracts": {
+    "katana": "0x7f1f4b4b29f5058fa32cc7a97141b8d7e5abdc2d",
+    "base": "0xd5390300c5db71f80d46f0fa9983fc72d4d1e3da"
+   }
+  },
+  {
+   "ticker": "BIRB",
+   "cg_id": "moonbirds",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 75,
+   "mcap_usd": 14955598,
+   "price_usd": 0.05246,
+   "entered_paper": false,
+   "contracts": {
+    "solana": "G7vQWurMkMMm2dU3iZpXYFTHT9Biio4F4gZCrwFpKNwG"
+   }
+  },
+  {
+   "ticker": "NEWT",
+   "cg_id": "newton-protocol",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 73,
+   "mcap_usd": 9049759,
+   "price_usd": 0.04208644,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0xd0ec028a3d21533fdd200838f39c85b03679285d",
+    "binance-smart-chain": "0xb8a677e6d805c8d743e6f14c8bc9c19305b5defc"
+   }
+  },
+  {
+   "ticker": "WHUF",
+   "cg_id": "whuffie",
+   "run_timestamp": "2026-10-19T13:34:20Z",
+   "score": 70,
+   "mcap_usd": 5126743,
+   "price_usd": 2.56,
+   "entered_paper": true,
+   "contracts": {
+    "base": "0xeeee77bc7e82c0d4166d52f58239d4c5bf41eeee"
+   }
+  },
+  {
+   "ticker": "STO",
+   "cg_id": "stakestone",
+   "run_timestamp": "2026-10-19T13:34:20Z",
+   "score": 68,
+   "mcap_usd": 7384630,
+   "price_usd": 0.03278033,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0x1d88713b483a8e45cff0e5cd7c2e15e5fab4534d",
+    "binance-smart-chain": "0xdaf1695c41327b61b9b9965ac6a5843a3198cf07"
+   }
+  },
+  {
+   "ticker": "GWEI",
+   "cg_id": "ethgas-2",
+   "run_timestamp": "2026-10-19T13:34:20Z",
+   "score": 65,
+   "mcap_usd": 43133323,
+   "price_usd": 0.02176334,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0x2798b1cc5a993085e8a9d46e80499f1b63f42204",
+    "binance-smart-chain": "0x30117e4bc17d7b044194b76a38365c53b72f7d49"
+   }
+  },
+  {
+   "ticker": "DNA",
+   "cg_id": "neosoul",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 65,
+   "mcap_usd": 26160984,
+   "price_usd": 0.201238,
+   "entered_paper": true,
+   "contracts": {
+    "binance-smart-chain": "0xa991f61940095aea0724ef54077223b048c5cf7b"
+   }
+  },
+  {
+   "ticker": "LAYER",
+   "cg_id": "solayer",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 65,
+   "mcap_usd": 13584793,
+   "price_usd": 0.064678,
+   "entered_paper": false,
+   "contracts": {
+    "solana": "LAYER4xPpTCb3QL8S9u41EAhAX7mhBn8Q6xMTwY2Yzc"
+   }
+  },
+  {
+   "ticker": "RECALL",
+   "cg_id": "recall",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 65,
+   "mcap_usd": 9920556,
+   "price_usd": 0.0346772,
+   "entered_paper": false,
+   "contracts": {
+    "base": "0x1f16e03c1a5908818f47f6ee7bb16690b40d0671"
+   }
+  },
+  {
+   "ticker": "BLEND",
+   "cg_id": "fluent-network",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 65,
+   "mcap_usd": 10318770,
+   "price_usd": 0.05162,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0xd8a271974e8edae9d7b58e3370dc1669427503f4",
+    "solana": "BWsnyEa1XtsNRdgPaDoA1WVUonF7BBGZTd2zc72NQsWT",
+    "fluent": "0x1385b8f55a84f2bda13eed4099d29eae03d553b2"
+   }
+  },
+  {
+   "ticker": "ZKP",
+   "cg_id": "zkpass",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 65,
+   "mcap_usd": 8242124,
+   "price_usd": 0.04088632,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0xe1be424f442d0687129128c6c38aace44f8c8dbc",
+    "binance-smart-chain": "0xd89b7dd376e671c124352267516bef1c2cc231a3"
+   }
+  },
+  {
+   "ticker": "XDP",
+   "cg_id": "doppler-finance",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 65,
+   "mcap_usd": 18555677,
+   "price_usd": 0.01855565,
+   "entered_paper": false,
+   "contracts": {
+    "base": "0x07b3d902783c3c12b077508c3b5c00113d1291d0"
+   }
+  },
+  {
+   "ticker": "TREE",
+   "cg_id": "treehouse",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 65,
+   "mcap_usd": 5991627,
+   "price_usd": 0.0383796,
+   "entered_paper": false,
+   "contracts": {
+    "avalanche": "0x77146784315ba81904d654466968e3a7c196d1f3",
+    "hyperevm": "0x77146784315ba81904d654466968e3a7c196d1f3",
+    "ethereum": "0x77146784315ba81904d654466968e3a7c196d1f3",
+    "binance-smart-chain": "0x77146784315ba81904d654466968e3a7c196d1f3"
+   }
+  },
+  {
+   "ticker": "BR",
+   "cg_id": "bedrock-token",
+   "run_timestamp": "2026-10-19T13:34:20Z",
+   "score": 63,
+   "mcap_usd": 146598283,
+   "price_usd": 0.493846,
+   "entered_paper": false,
+   "contracts": {
+    "binance-smart-chain": "0xff7d6a96ae471bbcd7713af9cb1feeb16cf56b41",
+    "base": "0xd6122ddada244913521f3d62006eaf756c157660",
+    "ethereum": "0x9b61879e91a0b1322f3d61c23aaf936231882096",
+    "berachain": "0xd352dc6e5f0c45e2f2b38eb5565eb286a1ea4087"
+   }
+  },
+  {
+   "ticker": "ICNT",
+   "cg_id": "impossible-cloud-network-token",
+   "run_timestamp": "2026-10-19T13:34:20Z",
+   "score": 60,
+   "mcap_usd": 46378348,
+   "price_usd": 0.183452,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0xe5e0b73380181273abcfd88695f52c4d0c825661",
+    "base": "0xe0cd4cacddcbf4f36e845407ce53e87717b6601d"
+   }
+  },
+  {
+   "ticker": "MMT",
+   "cg_id": "momentum-3",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 60,
+   "mcap_usd": 28904364,
+   "price_usd": 0.141609,
+   "entered_paper": false,
+   "contracts": {
+    "sui": "0x35169bc93e1fddfcf3a82a9eae726d349689ed59e4b065369af8789fe59f8608::mmt::MMT",
+    "binance-smart-chain": "0xac246674dd88dd08f9c6dd0ab5e2115988bff34a"
+   }
+  },
+  {
+   "ticker": "GRVT",
+   "cg_id": "grvt",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 60,
+   "mcap_usd": 28042956,
+   "price_usd": 0.245254,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0xad29f2723fcdbcf665f210f25e06f97477e417cf",
+    "binance-smart-chain": "0x46f2564e0fa8248d15125e7e54173cfbdef91be7"
+   }
+  },
+  {
+   "ticker": "BSB",
+   "cg_id": "block-street",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 60,
+   "mcap_usd": 24091190,
+   "price_usd": 0.09383,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0xdb6ba5d510f114f9b2ea08bea7d30e32eee33411",
+    "mantle": "0xe5c330addf7aa9c7838da836436142c56a15aa95",
+    "base": "0x0dc28efba8c6e0c14fa7391636b8bec86c4c83d6",
+    "binance-smart-chain": "0x595deaad1eb5476ff1e649fdb7efc36f1e4679cc"
+   }
+  },
+  {
+   "ticker": "ELSA",
+   "cg_id": "elsa",
+   "run_timestamp": "2026-10-19T13:34:20Z",
+   "score": 55,
+   "mcap_usd": 14308383,
+   "price_usd": 0.062507,
+   "entered_paper": false,
+   "contracts": {
+    "base": "0x29cc30f9d113b356ce408667aa6433589cecbdca",
+    "mantle": "0x29cc30f9d113b356ce408667aa6433589cecbdca"
+   }
+  },
+  {
+   "ticker": "COLLECT",
+   "cg_id": "collect-on-fanable",
+   "run_timestamp": "2026-10-19T13:34:20Z",
+   "score": 55,
+   "mcap_usd": 12192688,
+   "price_usd": 0.02270325,
+   "entered_paper": false,
+   "contracts": {
+    "binance-smart-chain": "0x4b3d30992f003c8167699735f5ab2831b2a087d3"
+   }
+  },
+  {
+   "ticker": "IRYS",
+   "cg_id": "irys",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 55,
+   "mcap_usd": 40538825,
+   "price_usd": 0.02026091,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0x50f41f589afaca2ef41fdf590fe7b90cd26dee64",
+    "binance-smart-chain": "0x91152b4ef635403efbae860edd0f8c321d7c035d"
+   }
+  },
+  {
+   "ticker": "EDGE",
+   "cg_id": "edgex",
+   "run_timestamp": "2026-10-22T12:05:49Z",
+   "score": 50,
+   "mcap_usd": 105255787,
+   "price_usd": 0.30088,
+   "entered_paper": false,
+   "contracts": {
+    "ethereum": "0xb0076de78dc50581770bba1d211ddc0ad4f2a241"
+   }
+  }
+ ],
+ "blacklist": {
+  "ERA": {
+   "reason": "РЕКУРРЕНТНЫЕ РАЗЛОКИ: ежемесячные анлоки Caldera 17-го числа: 17.07.2026 — 77.46M ERA (7.75% total supply, ~52% mcap, DropsTab); транш 17.08.2026 — ~$1.44M, +16.03% к предложению (Bitcoin News Digest 18.08.2026), Tokenomics.com оценивает августовский транш в 26.4M ERA (2.6% total supply, >11% mcap); траншы 17.09.2026 и далее ежемесячно — исключение бессрочное, пока идёт месячный вестинг (сверено 2",
+   "event_date": null
+  },
+  "HEMI": {
+   "reason": "КЛАСС А: транш линейного вестинга 29.10.2026 — ~11.4% от mcap (app.tokenomics.com, график разлоков HEMI); 12-мес клифф инвесторов (28%) и команды (25%) истёк 29.08.2026, далее 24 мес линейно (официальный пост Hemi по вестингу) — событие в 60-дневном окне (сверено 23.10.2026)",
+   "event_date": "2026-10-29"
+  },
+  "KAITO": {
+   "reason": "РЕКУРРЕНТНЫЕ РАЗЛОКИ: месячные транши 20-го числа; 20.08.2026 — 32.6M KAITO ($11.3M), 3.26% total supply, ~13.5% циркуляции при float ~240M (DefiLlama/CoinGecko/AMBCrypto); транш 20.09.2026 исполнен — ~$5.85M, 7.3% от mcap (CryptoRank), следующий ~20.10.2026; разлочено 241.39M KAITO = 24.14% total supply (Tokenomist); исключение бессрочное, пока идёт месячный вестинг (сверено 23.10.2026)",
+   "event_date": null
+  },
+  "MOVE": {
+   "reason": "СТРУКТУРНЫЙ (БАНКРОТСТВО): Chapter 11 Movement Labs с 15.07.2026 (скандал с маркет-мейкером); выкуп финансировался из замороженных средств, не из выручки; ежемесячные анлоки ~5.18% supply; исключение бессрочное (сверено 23.10.2026, изменений не найдено)",
+   "event_date": null
+  },
+  "PROMPT": {
+   "reason": "СТРУКТУРНЫЙ (ДЕЛИСТИНГ): Binance Futures принудительно закрыла позиции и делистила бессрочный контракт PROMPTUSDT 05.10.2026 (автоматический сеттлмент 16:30, ChainCatcher 01.10.2026; Bitcoin Sistemi 01.10.2026) — уход перп-ликвидности и шорт-инфраструктуры с крупнейшей биржи; исключение бессрочное (сверено 23.10.2026, новых изменений статуса не найдено)",
+   "event_date": null
+  },
+  "RED": {
+   "reason": "РЕКУРРЕНТНЫЕ РАЗЛОКИ: ежемесячные транши RedStone 6-го числа: ~40.85M RED (early backers 26.42M + core contributors 5.56M + ecosystem 5.54M + protocol dev 3.33M), ~8.5% циркуляции при 481M unlocked (Tokenomist 48.11%, подтверждено Yahoo/BeInCrypto по траншам 06.03 и 06.05.2026; CoinMarketCap: >72% supply заблокировано, вестинг 4 года); транш 06.10.2026 исполнен, следующий ~06.11.2026 — исключение ",
+   "event_date": null
+  }
+ }
+}

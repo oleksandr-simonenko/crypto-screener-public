@@ -1,0 +1,1551 @@
+{
+  "schema_version": 1,
+  "status": "есть закрытые сделки",
+  "provenance": {
+    "git_sha": "30d87fcda937",
+    "generated_utc": "2026-10-26T14:16:54Z",
+    "tool_version": "1.0.0",
+    "python": "3.12.15"
+  },
+  "rules_sha256": "80a3f55a0934c270e1dde5e793e430e003ea0b2149600d270f734b5ec944bd2a",
+  "rules_file": "screener_tournament_rules_v1.md",
+  "rules_addendum_sha256": "307889450ffff031b6f5968105eb53733ddf0c6e25107f5e40c40f64ead1e2b4",
+  "rules_addendum_file": "tournament_rules_addendum_1.md",
+  "costs_config_used": {
+    "path": "costs.yaml",
+    "version": 1,
+    "instrument": "spot",
+    "taker_fee_bps": 20.0,
+    "funding_applies_to_spot": false,
+    "funding_bps_per_day": 0.0,
+    "slippage_bps_by_class": {
+      "deep": 15.0,
+      "medium": 40.0,
+      "thin": 100.0
+    },
+    "liquidity_class_thresholds": {
+      "deep_min_vol_usd": 10000000,
+      "medium_min_vol_usd": 1000000
+    },
+    "position_usd": 100,
+    "sensitivity_multipliers": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "sensitivity_applies_to": "all",
+    "slippage_is_assumption": true,
+    "honesty_note": "слиппедж и границы классов ликвидности — консервативные ДОПУЩЕНИЯ, а не измерения (стакана у проекта нет); любое net-число читать только вместе с таблицей чувствительности sensitivity"
+  },
+  "sources": {
+    "tournament.json": {
+      "exists": true,
+      "size_bytes": 191228,
+      "mtime_utc": "2026-10-26T14:16:25Z"
+    },
+    "positions.json": {
+      "exists": true,
+      "size_bytes": 48233,
+      "mtime_utc": "2026-10-26T14:16:25Z"
+    },
+    "candidates_log.jsonl": {
+      "exists": true,
+      "size_bytes": 25172470,
+      "mtime_utc": "2026-10-26T14:16:25Z"
+    },
+    "costs.yaml": {
+      "exists": true,
+      "size_bytes": 13222,
+      "mtime_utc": "2026-10-26T14:16:25Z"
+    }
+  },
+  "paths_are_relative_to": "корень репозитория (repo_dir)",
+  "equity_curve_model": {
+    "order_fields": [
+      "exit_date",
+      "entry_date",
+      "track",
+      "cg_id",
+      "sym",
+      "ret_net_pct"
+    ],
+    "missing_date_sorts_as": "9999-12-31",
+    "order_note": "полный детерминированный порядок; сортировки только по exit_date НЕ ХВАТАЕТ — в один день закрывается несколько позиций, и их порядок внутри дня задавал бы порядок строк в tournament.json/positions.json, а с ним менялась бы и просадка",
+    "max_drawdown_pct": "последовательная кривая «одна ставка за раз»: E_0 = 1, E_i = E_(i-1) + net_i/100. Масштабно-инвариантна (размер ставки не влияет)",
+    "max_drawdown_pct_equal_weight": "равновзвешенный портфель: капитал делится поровну между всеми N закрытыми сделками, результат приходит в день выхода, просадка меряется по датам; от порядка внутри дня не зависит вовсе",
+    "limitation": "ни одно из двух чисел не является просадкой портфеля дорожки: дорожка держит до 60 позиций одновременно, а переоценки открытых позиций в расчёте нет и быть не может (§2 замороженных правил запрещает open_pnl в любом виде). max_drawdown_pct — просадка последовательности исходов, max_drawdown_pct_equal_weight — просадка РЕАЛИЗОВАННОГО результата портфеля, то есть нижняя оценка настоящей"
+  },
+  "n_closed_total": 412,
+  "n_open_total": 368,
+  "n_trades_total": 780,
+  "liq_class_fallback_n": 153,
+  "liq_class_fallback_n_all": 153,
+  "liq_class_fallback_n_closed": 151,
+  "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+  "tracks_without_closed": [],
+  "tracks": {
+    "A0": {
+      "n_closed": 38,
+      "n_open": 30,
+      "mean_gross": 6.002632,
+      "median_gross": 2.95,
+      "mean_net": 4.257595,
+      "median_net": 1.9761,
+      "iqr_net": [
+        -16.460425,
+        19.9412
+      ],
+      "share_profitable_net": 0.526316,
+      "max_drawdown_pct": 282.9856,
+      "max_drawdown_pct_equal_weight": 6.937053,
+      "max_drawdown_note": "«одна ставка за раз», а дорожка держит до 60 позиций сразу — это НЕ просадка портфеля; портфельная оценка рядом: max_drawdown_pct_equal_weight",
+      "equity_curve_order": "exit_date, entry_date, track, cg_id, sym, ret_net_pct",
+      "top3_contribution_share": 2.004505,
+      "top3_contribution_note": "доля суммы 3 лучших сделок в общей сумме net",
+      "worst_trade_net": -68.6212,
+      "best_trade_net": 128.0921,
+      "liq_class_fallback_n": 21,
+      "liq_class_fallback_n_all": 21,
+      "liq_class_fallback_n_closed": 21,
+      "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+      "liq_class_counts": {
+        "deep": 13,
+        "medium": 4,
+        "unknown": 21
+      },
+      "liq_class_counts_all": {
+        "deep": 33,
+        "medium": 14,
+        "unknown": 21
+      },
+      "n_closed_without_ret": 0,
+      "status": "есть закрытые сделки",
+      "sensitivity": [
+        {
+          "mult": 0.5,
+          "n_closed": 38,
+          "mean_net": 5.130113,
+          "median_net": 2.46305,
+          "share_profitable_net": 0.526316
+        },
+        {
+          "mult": 1.0,
+          "n_closed": 38,
+          "mean_net": 4.257595,
+          "median_net": 1.9761,
+          "share_profitable_net": 0.526316
+        },
+        {
+          "mult": 2.0,
+          "n_closed": 38,
+          "mean_net": 2.512558,
+          "median_net": 0.7948,
+          "share_profitable_net": 0.5
+        }
+      ],
+      "in_statistical_test": false
+    },
+    "A1": {
+      "n_closed": 56,
+      "n_open": 50,
+      "mean_gross": 11.841071,
+      "median_gross": 9.15,
+      "mean_net": 10.290804,
+      "median_net": 8.0425,
+      "iqr_net": [
+        -15.635225,
+        26.2456
+      ],
+      "share_profitable_net": 0.607143,
+      "max_drawdown_pct": 29.657478,
+      "max_drawdown_pct_equal_weight": 1.189508,
+      "max_drawdown_note": "«одна ставка за раз», а дорожка держит до 60 позиций сразу — это НЕ просадка портфеля; портфельная оценка рядом: max_drawdown_pct_equal_weight",
+      "equity_curve_order": "exit_date, entry_date, track, cg_id, sym, ret_net_pct",
+      "top3_contribution_share": 0.692978,
+      "top3_contribution_note": "доля суммы 3 лучших сделок в общей сумме net",
+      "worst_trade_net": -82.0416,
+      "best_trade_net": 158.4608,
+      "liq_class_fallback_n": 20,
+      "liq_class_fallback_n_all": 20,
+      "liq_class_fallback_n_closed": 20,
+      "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+      "liq_class_counts": {
+        "deep": 28,
+        "medium": 7,
+        "thin": 1,
+        "unknown": 20
+      },
+      "liq_class_counts_all": {
+        "deep": 67,
+        "medium": 16,
+        "thin": 3,
+        "unknown": 20
+      },
+      "n_closed_without_ret": 0,
+      "status": "есть закрытые сделки",
+      "sensitivity": [
+        {
+          "mult": 0.5,
+          "n_closed": 56,
+          "mean_net": 11.065938,
+          "median_net": 8.767975,
+          "share_profitable_net": 0.607143
+        },
+        {
+          "mult": 1.0,
+          "n_closed": 56,
+          "mean_net": 10.290804,
+          "median_net": 8.0425,
+          "share_profitable_net": 0.607143
+        },
+        {
+          "mult": 2.0,
+          "n_closed": 56,
+          "mean_net": 8.740536,
+          "median_net": 6.148,
+          "share_profitable_net": 0.589286
+        }
+      ],
+      "in_statistical_test": true
+    },
+    "A2": {
+      "n_closed": 60,
+      "n_open": 55,
+      "mean_gross": 57.4,
+      "median_gross": 2.1,
+      "mean_net": 55.698893,
+      "median_net": 0.01585,
+      "iqr_net": [
+        -18.476925,
+        26.129525
+      ],
+      "share_profitable_net": 0.5,
+      "max_drawdown_pct": 112.3104,
+      "max_drawdown_pct_equal_weight": 1.724107,
+      "max_drawdown_note": "«одна ставка за раз», а дорожка держит до 60 позиций сразу — это НЕ просадка портфеля; портфельная оценка рядом: max_drawdown_pct_equal_weight",
+      "equity_curve_order": "exit_date, entry_date, track, cg_id, sym, ret_net_pct",
+      "top3_contribution_share": 0.914572,
+      "top3_contribution_note": "доля суммы 3 лучших сделок в общей сумме net",
+      "worst_trade_net": -53.7262,
+      "best_trade_net": 2750.1086,
+      "liq_class_fallback_n": 20,
+      "liq_class_fallback_n_all": 20,
+      "liq_class_fallback_n_closed": 20,
+      "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+      "liq_class_counts": {
+        "deep": 40,
+        "unknown": 20
+      },
+      "liq_class_counts_all": {
+        "deep": 92,
+        "medium": 3,
+        "unknown": 20
+      },
+      "n_closed_without_ret": 0,
+      "status": "есть закрытые сделки",
+      "sensitivity": [
+        {
+          "mult": 0.5,
+          "n_closed": 60,
+          "mean_net": 56.549447,
+          "median_net": 0.8748,
+          "share_profitable_net": 0.533333
+        },
+        {
+          "mult": 1.0,
+          "n_closed": 60,
+          "mean_net": 55.698893,
+          "median_net": 0.01585,
+          "share_profitable_net": 0.5
+        },
+        {
+          "mult": 2.0,
+          "n_closed": 60,
+          "mean_net": 53.997787,
+          "median_net": -1.0056,
+          "share_profitable_net": 0.483333
+        }
+      ],
+      "in_statistical_test": true
+    },
+    "A3": {
+      "n_closed": 60,
+      "n_open": 55,
+      "mean_gross": 17.166667,
+      "median_gross": 1.8,
+      "mean_net": 15.159962,
+      "median_net": -0.6432,
+      "iqr_net": [
+        -23.7628,
+        24.7084
+      ],
+      "share_profitable_net": 0.483333,
+      "max_drawdown_pct": 35.284956,
+      "max_drawdown_pct_equal_weight": 0.775233,
+      "max_drawdown_note": "«одна ставка за раз», а дорожка держит до 60 позиций сразу — это НЕ просадка портфеля; портфельная оценка рядом: max_drawdown_pct_equal_weight",
+      "equity_curve_order": "exit_date, entry_date, track, cg_id, sym, ret_net_pct",
+      "top3_contribution_share": 1.107455,
+      "top3_contribution_note": "доля суммы 3 лучших сделок в общей сумме net",
+      "worst_trade_net": -95.1343,
+      "best_trade_net": 580.6624,
+      "liq_class_fallback_n": 20,
+      "liq_class_fallback_n_all": 20,
+      "liq_class_fallback_n_closed": 20,
+      "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+      "liq_class_counts": {
+        "deep": 13,
+        "medium": 21,
+        "thin": 6,
+        "unknown": 20
+      },
+      "liq_class_counts_all": {
+        "deep": 21,
+        "medium": 61,
+        "thin": 13,
+        "unknown": 20
+      },
+      "n_closed_without_ret": 0,
+      "status": "есть закрытые сделки",
+      "sensitivity": [
+        {
+          "mult": 0.5,
+          "n_closed": 60,
+          "mean_net": 16.163314,
+          "median_net": 0.5784,
+          "share_profitable_net": 0.516667
+        },
+        {
+          "mult": 1.0,
+          "n_closed": 60,
+          "mean_net": 15.159962,
+          "median_net": -0.6432,
+          "share_profitable_net": 0.483333
+        },
+        {
+          "mult": 2.0,
+          "n_closed": 60,
+          "mean_net": 13.153257,
+          "median_net": -3.0384,
+          "share_profitable_net": 0.45
+        }
+      ],
+      "in_statistical_test": true
+    },
+    "A4": {
+      "n_closed": 60,
+      "n_open": 55,
+      "mean_gross": 5.513333,
+      "median_gross": 3.6,
+      "mean_net": 3.98256,
+      "median_net": 2.6183,
+      "iqr_net": [
+        -17.973475,
+        22.854
+      ],
+      "share_profitable_net": 0.516667,
+      "max_drawdown_pct": 54.8688,
+      "max_drawdown_pct_equal_weight": 3.95722,
+      "max_drawdown_note": "«одна ставка за раз», а дорожка держит до 60 позиций сразу — это НЕ просадка портфеля; портфельная оценка рядом: max_drawdown_pct_equal_weight",
+      "equity_curve_order": "exit_date, entry_date, track, cg_id, sym, ret_net_pct",
+      "top3_contribution_share": 1.522581,
+      "top3_contribution_note": "доля суммы 3 лучших сделок в общей сумме net",
+      "worst_trade_net": -95.1343,
+      "best_trade_net": 128.9196,
+      "liq_class_fallback_n": 21,
+      "liq_class_fallback_n_all": 21,
+      "liq_class_fallback_n_closed": 21,
+      "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+      "liq_class_counts": {
+        "deep": 23,
+        "medium": 16,
+        "unknown": 21
+      },
+      "liq_class_counts_all": {
+        "deep": 54,
+        "medium": 39,
+        "thin": 1,
+        "unknown": 21
+      },
+      "n_closed_without_ret": 0,
+      "status": "есть закрытые сделки",
+      "sensitivity": [
+        {
+          "mult": 0.5,
+          "n_closed": 60,
+          "mean_net": 4.747947,
+          "median_net": 3.10915,
+          "share_profitable_net": 0.516667
+        },
+        {
+          "mult": 1.0,
+          "n_closed": 60,
+          "mean_net": 3.98256,
+          "median_net": 2.6183,
+          "share_profitable_net": 0.516667
+        },
+        {
+          "mult": 2.0,
+          "n_closed": 60,
+          "mean_net": 2.451787,
+          "median_net": 1.6366,
+          "share_profitable_net": 0.516667
+        }
+      ],
+      "in_statistical_test": true
+    },
+    "A5": {
+      "n_closed": 60,
+      "n_open": 55,
+      "mean_gross": 12.593333,
+      "median_gross": -1.45,
+      "mean_net": 11.064428,
+      "median_net": -2.13985,
+      "iqr_net": [
+        -19.840075,
+        19.40825
+      ],
+      "share_profitable_net": 0.483333,
+      "max_drawdown_pct": 66.685016,
+      "max_drawdown_pct_equal_weight": 1.990685,
+      "max_drawdown_note": "«одна ставка за раз», а дорожка держит до 60 позиций сразу — это НЕ просадка портфеля; портфельная оценка рядом: max_drawdown_pct_equal_weight",
+      "equity_curve_order": "exit_date, entry_date, track, cg_id, sym, ret_net_pct",
+      "top3_contribution_share": 0.793167,
+      "top3_contribution_note": "доля суммы 3 лучших сделок в общей сумме net",
+      "worst_trade_net": -87.2548,
+      "best_trade_net": 251.3234,
+      "liq_class_fallback_n": 20,
+      "liq_class_fallback_n_all": 20,
+      "liq_class_fallback_n_closed": 20,
+      "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+      "liq_class_counts": {
+        "deep": 32,
+        "medium": 8,
+        "unknown": 20
+      },
+      "liq_class_counts_all": {
+        "deep": 78,
+        "medium": 17,
+        "unknown": 20
+      },
+      "n_closed_without_ret": 0,
+      "status": "есть закрытые сделки",
+      "sensitivity": [
+        {
+          "mult": 0.5,
+          "n_closed": 60,
+          "mean_net": 11.828881,
+          "median_net": -1.794925,
+          "share_profitable_net": 0.483333
+        },
+        {
+          "mult": 1.0,
+          "n_closed": 60,
+          "mean_net": 11.064428,
+          "median_net": -2.13985,
+          "share_profitable_net": 0.483333
+        },
+        {
+          "mult": 2.0,
+          "n_closed": 60,
+          "mean_net": 9.535523,
+          "median_net": -2.8297,
+          "share_profitable_net": 0.466667
+        }
+      ],
+      "in_statistical_test": true
+    },
+    "A6": {
+      "n_closed": 21,
+      "n_open": 17,
+      "mean_gross": 10.119048,
+      "median_gross": 9.8,
+      "mean_net": 8.720081,
+      "median_net": 7.1648,
+      "iqr_net": [
+        -10.5984,
+        20.7312
+      ],
+      "share_profitable_net": 0.619048,
+      "max_drawdown_pct": 54.7312,
+      "max_drawdown_pct_equal_weight": 1.46674,
+      "max_drawdown_note": "«одна ставка за раз», а дорожка держит до 60 позиций сразу — это НЕ просадка портфеля; портфельная оценка рядом: max_drawdown_pct_equal_weight",
+      "equity_curve_order": "exit_date, entry_date, track, cg_id, sym, ret_net_pct",
+      "top3_contribution_share": 1.106677,
+      "top3_contribution_note": "доля суммы 3 лучших сделок в общей сумме net",
+      "worst_trade_net": -44.2704,
+      "best_trade_net": 128.0921,
+      "liq_class_fallback_n": 7,
+      "liq_class_fallback_n_all": 7,
+      "liq_class_fallback_n_closed": 7,
+      "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+      "liq_class_counts": {
+        "deep": 11,
+        "medium": 3,
+        "unknown": 7
+      },
+      "liq_class_counts_all": {
+        "deep": 22,
+        "medium": 9,
+        "unknown": 7
+      },
+      "n_closed_without_ret": 0,
+      "status": "есть закрытые сделки",
+      "sensitivity": [
+        {
+          "mult": 0.5,
+          "n_closed": 21,
+          "mean_net": 9.419564,
+          "median_net": 8.4824,
+          "share_profitable_net": 0.619048
+        },
+        {
+          "mult": 1.0,
+          "n_closed": 21,
+          "mean_net": 8.720081,
+          "median_net": 7.1648,
+          "share_profitable_net": 0.619048
+        },
+        {
+          "mult": 2.0,
+          "n_closed": 21,
+          "mean_net": 7.321114,
+          "median_net": 4.5296,
+          "share_profitable_net": 0.52381
+        }
+      ],
+      "in_statistical_test": true
+    },
+    "A7": {
+      "n_closed": 57,
+      "n_open": 51,
+      "mean_gross": 13.757895,
+      "median_gross": 14.2,
+      "mean_net": 11.819432,
+      "median_net": 12.8296,
+      "iqr_net": [
+        -15.3284,
+        33.9728
+      ],
+      "share_profitable_net": 0.578947,
+      "max_drawdown_pct": 45.13407,
+      "max_drawdown_pct_equal_weight": 1.930728,
+      "max_drawdown_note": "«одна ставка за раз», а дорожка держит до 60 позиций сразу — это НЕ просадка портфеля; портфельная оценка рядом: max_drawdown_pct_equal_weight",
+      "equity_curve_order": "exit_date, entry_date, track, cg_id, sym, ret_net_pct",
+      "top3_contribution_share": 0.453012,
+      "top3_contribution_note": "доля суммы 3 лучших сделок в общей сумме net",
+      "worst_trade_net": -74.624,
+      "best_trade_net": 105.0576,
+      "liq_class_fallback_n": 24,
+      "liq_class_fallback_n_all": 24,
+      "liq_class_fallback_n_closed": 22,
+      "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+      "liq_class_counts": {
+        "deep": 4,
+        "medium": 27,
+        "thin": 4,
+        "unknown": 22
+      },
+      "liq_class_counts_all": {
+        "deep": 15,
+        "medium": 60,
+        "thin": 9,
+        "unknown": 24
+      },
+      "n_closed_without_ret": 0,
+      "status": "есть закрытые сделки",
+      "sensitivity": [
+        {
+          "mult": 0.5,
+          "n_closed": 57,
+          "mean_net": 12.788663,
+          "median_net": 13.5148,
+          "share_profitable_net": 0.578947
+        },
+        {
+          "mult": 1.0,
+          "n_closed": 57,
+          "mean_net": 11.819432,
+          "median_net": 12.8296,
+          "share_profitable_net": 0.578947
+        },
+        {
+          "mult": 2.0,
+          "n_closed": 57,
+          "mean_net": 9.880968,
+          "median_net": 11.4592,
+          "share_profitable_net": 0.578947
+        }
+      ],
+      "in_statistical_test": true
+    }
+  },
+  "overall": {
+    "n_closed": 412,
+    "n_open": 368,
+    "mean_gross": 18.078398,
+    "median_gross": 5.05,
+    "mean_net": 16.381683,
+    "median_net": 3.8678,
+    "iqr_net": [
+      -18.51175,
+      25.1158
+    ],
+    "share_profitable_net": 0.531553,
+    "max_drawdown_pct": 274.9008,
+    "max_drawdown_pct_equal_weight": 0.639825,
+    "max_drawdown_note": "«одна ставка за раз», а дорожка держит до 60 позиций сразу — это НЕ просадка портфеля; портфельная оценка рядом: max_drawdown_pct_equal_weight",
+    "equity_curve_order": "exit_date, entry_date, track, cg_id, sym, ret_net_pct",
+    "top3_contribution_share": 0.538366,
+    "top3_contribution_note": "доля суммы 3 лучших сделок в общей сумме net",
+    "worst_trade_net": -95.1343,
+    "best_trade_net": 2750.1086,
+    "liq_class_fallback_n": 153,
+    "liq_class_fallback_n_all": 153,
+    "liq_class_fallback_n_closed": 151,
+    "liq_class_fallback_note": "liq_class_fallback_n_all — по ВСЕМ загруженным сделкам (закрытым и открытым), liq_class_fallback_n_closed — только по закрытым; liq_class_fallback_n = ..._all",
+    "liq_class_counts": {
+      "deep": 164,
+      "medium": 86,
+      "thin": 11,
+      "unknown": 151
+    },
+    "liq_class_counts_all": {
+      "deep": 382,
+      "medium": 219,
+      "thin": 26,
+      "unknown": 153
+    },
+    "n_closed_without_ret": 0,
+    "status": "есть закрытые сделки",
+    "sensitivity": [
+      {
+        "mult": 0.5,
+        "n_closed": 412,
+        "mean_net": 17.230041,
+        "median_net": 4.38215,
+        "share_profitable_net": 0.541262
+      },
+      {
+        "mult": 1.0,
+        "n_closed": 412,
+        "mean_net": 16.381683,
+        "median_net": 3.8678,
+        "share_profitable_net": 0.531553
+      },
+      {
+        "mult": 2.0,
+        "n_closed": 412,
+        "mean_net": 14.684968,
+        "median_net": 2.9282,
+        "share_profitable_net": 0.512136
+      }
+    ]
+  },
+  "funnel": {
+    "log_path": "candidates_log.jsonl",
+    "status": "ok",
+    "n_runs": 25,
+    "n_lines": 37797,
+    "bad_lines": 0,
+    "runs": [
+      {
+        "run_id": "2026-08-03T10:12:58Z-30804320552",
+        "run_ts": "2026-08-03T10:12:58Z",
+        "n_lines": 1421,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 32,
+          "blacklist": 2,
+          "float_gate": 267,
+          "in_top_not_entered": 14,
+          "low_score": 128,
+          "no_perp": 976,
+          "none": 2
+        },
+        "no_perp_n": 976,
+        "no_perp_share": 0.68684,
+        "no_perp_sources": {
+          "prev_run_id": null,
+          "no_venue_at_all": 976,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": null,
+          "new_coin": null,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": null,
+          "share_new_coin": null
+        }
+      },
+      {
+        "run_id": "2026-08-06T09:14:17Z-31087891568",
+        "run_ts": "2026-08-06T09:14:17Z",
+        "n_lines": 1420,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 44,
+          "blacklist": 2,
+          "float_gate": 267,
+          "in_top_not_entered": 13,
+          "low_score": 120,
+          "no_perp": 972,
+          "none": 2
+        },
+        "no_perp_n": 972,
+        "no_perp_share": 0.684507,
+        "no_perp_sources": {
+          "prev_run_id": "2026-08-03T10:12:58Z-30804320552",
+          "no_venue_at_all": 972,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 0,
+          "new_coin": 30,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.0,
+          "share_new_coin": 0.030864
+        }
+      },
+      {
+        "run_id": "2026-08-10T08:12:11Z-31368659364",
+        "run_ts": "2026-08-10T08:12:11Z",
+        "n_lines": 1426,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 32,
+          "blacklist": 2,
+          "float_gate": 265,
+          "in_top_not_entered": 14,
+          "low_score": 136,
+          "no_perp": 975,
+          "none": 2
+        },
+        "no_perp_n": 975,
+        "no_perp_share": 0.683731,
+        "no_perp_sources": {
+          "prev_run_id": "2026-08-06T09:14:17Z-31087891568",
+          "no_venue_at_all": 975,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 1,
+          "new_coin": 24,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.001026,
+          "share_new_coin": 0.024615
+        }
+      },
+      {
+        "run_id": "2026-08-13T08:01:24Z-31679860632",
+        "run_ts": "2026-08-13T08:01:24Z",
+        "n_lines": 1408,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 31,
+          "blacklist": 2,
+          "float_gate": 267,
+          "in_top_not_entered": 14,
+          "low_score": 138,
+          "no_perp": 954,
+          "none": 2
+        },
+        "no_perp_n": 954,
+        "no_perp_share": 0.677557,
+        "no_perp_sources": {
+          "prev_run_id": "2026-08-10T08:12:11Z-31368659364",
+          "no_venue_at_all": 954,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 1,
+          "new_coin": 29,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.001048,
+          "share_new_coin": 0.030398
+        }
+      },
+      {
+        "run_id": "2026-08-17T07:23:16Z-32005236577",
+        "run_ts": "2026-08-17T07:23:16Z",
+        "n_lines": 1412,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 35,
+          "blacklist": 3,
+          "float_gate": 265,
+          "in_top_not_entered": 13,
+          "low_score": 138,
+          "no_perp": 956,
+          "none": 2
+        },
+        "no_perp_n": 956,
+        "no_perp_share": 0.677054,
+        "no_perp_sources": {
+          "prev_run_id": "2026-08-13T08:01:24Z-31679860632",
+          "no_venue_at_all": 956,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 0,
+          "new_coin": 30,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.0,
+          "share_new_coin": 0.031381
+        }
+      },
+      {
+        "run_id": "2026-08-20T07:13:58Z-32342679910",
+        "run_ts": "2026-08-20T07:13:58Z",
+        "n_lines": 1440,
+        "enter_n": 3,
+        "reject_counts": {
+          "below_top_n": 33,
+          "blacklist": 3,
+          "float_gate": 260,
+          "in_top_not_entered": 14,
+          "low_score": 138,
+          "no_perp": 989,
+          "none": 3
+        },
+        "no_perp_n": 989,
+        "no_perp_share": 0.686806,
+        "no_perp_sources": {
+          "prev_run_id": "2026-08-17T07:23:16Z-32005236577",
+          "no_venue_at_all": 989,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 0,
+          "new_coin": 53,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.0,
+          "share_new_coin": 0.053589
+        }
+      },
+      {
+        "run_id": "2026-08-24T07:35:52Z-32701845435",
+        "run_ts": "2026-08-24T07:35:52Z",
+        "n_lines": 1496,
+        "enter_n": 3,
+        "reject_counts": {
+          "below_top_n": 37,
+          "blacklist": 5,
+          "float_gate": 263,
+          "in_top_not_entered": 12,
+          "low_score": 131,
+          "no_perp": 1045,
+          "none": 3
+        },
+        "no_perp_n": 1045,
+        "no_perp_share": 0.698529,
+        "no_perp_sources": {
+          "prev_run_id": "2026-08-20T07:13:58Z-32342679910",
+          "no_venue_at_all": 1045,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 1,
+          "new_coin": 77,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.000957,
+          "share_new_coin": 0.073684
+        }
+      },
+      {
+        "run_id": "2026-08-27T17:45:57Z-33099610588",
+        "run_ts": "2026-08-27T17:45:57Z",
+        "n_lines": 1521,
+        "enter_n": 1,
+        "reject_counts": {
+          "below_top_n": 33,
+          "blacklist": 7,
+          "float_gate": 258,
+          "in_top_not_entered": 14,
+          "low_score": 139,
+          "no_perp": 1069,
+          "none": 1
+        },
+        "no_perp_n": 1069,
+        "no_perp_share": 0.702827,
+        "no_perp_sources": {
+          "prev_run_id": "2026-08-24T07:35:52Z-32701845435",
+          "no_venue_at_all": 1069,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 5,
+          "new_coin": 48,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.004677,
+          "share_new_coin": 0.044902
+        }
+      },
+      {
+        "run_id": "2026-08-31T14:05:12Z-33400055382",
+        "run_ts": "2026-08-31T14:05:12Z",
+        "n_lines": 1501,
+        "enter_n": 1,
+        "reject_counts": {
+          "below_top_n": 46,
+          "blacklist": 6,
+          "float_gate": 262,
+          "in_top_not_entered": 16,
+          "low_score": 128,
+          "no_perp": 1042,
+          "none": 1
+        },
+        "no_perp_n": 1042,
+        "no_perp_share": 0.694204,
+        "no_perp_sources": {
+          "prev_run_id": "2026-08-27T17:45:57Z-33099610588",
+          "no_venue_at_all": 1042,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 0,
+          "new_coin": 25,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.0,
+          "share_new_coin": 0.023992
+        }
+      },
+      {
+        "run_id": "2026-09-03T11:26:36Z-33749252643",
+        "run_ts": "2026-09-03T11:26:36Z",
+        "n_lines": 1500,
+        "enter_n": 3,
+        "reject_counts": {
+          "below_top_n": 40,
+          "blacklist": 6,
+          "float_gate": 258,
+          "in_top_not_entered": 12,
+          "low_score": 133,
+          "no_perp": 1048,
+          "none": 3
+        },
+        "no_perp_n": 1048,
+        "no_perp_share": 0.698667,
+        "no_perp_sources": {
+          "prev_run_id": "2026-08-31T14:05:12Z-33400055382",
+          "no_venue_at_all": 1048,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 1,
+          "new_coin": 34,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.000954,
+          "share_new_coin": 0.032443
+        }
+      },
+      {
+        "run_id": "2026-09-07T12:47:24Z-34123320031",
+        "run_ts": "2026-09-07T12:47:24Z",
+        "n_lines": 1546,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 27,
+          "blacklist": 6,
+          "float_gate": 271,
+          "in_top_not_entered": 14,
+          "low_score": 147,
+          "no_perp": 1079,
+          "none": 2
+        },
+        "no_perp_n": 1079,
+        "no_perp_share": 0.69793,
+        "no_perp_sources": {
+          "prev_run_id": "2026-09-03T11:26:36Z-33749252643",
+          "no_venue_at_all": 1079,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 0,
+          "new_coin": 58,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.0,
+          "share_new_coin": 0.053753
+        }
+      },
+      {
+        "run_id": "2026-09-10T11:32:07Z-34471350767",
+        "run_ts": "2026-09-10T11:32:07Z",
+        "n_lines": 1538,
+        "enter_n": 1,
+        "reject_counts": {
+          "below_top_n": 47,
+          "blacklist": 6,
+          "float_gate": 273,
+          "in_top_not_entered": 14,
+          "low_score": 124,
+          "no_perp": 1073,
+          "none": 1
+        },
+        "no_perp_n": 1073,
+        "no_perp_share": 0.697659,
+        "no_perp_sources": {
+          "prev_run_id": "2026-09-07T12:47:24Z-34123320031",
+          "no_venue_at_all": 1073,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 3,
+          "new_coin": 32,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.002796,
+          "share_new_coin": 0.029823
+        }
+      },
+      {
+        "run_id": "2026-09-14T13:02:24Z-34846279641",
+        "run_ts": "2026-09-14T13:02:24Z",
+        "n_lines": 1531,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 23,
+          "blacklist": 5,
+          "float_gate": 269,
+          "in_top_not_entered": 14,
+          "low_score": 144,
+          "no_perp": 1074,
+          "none": 2
+        },
+        "no_perp_n": 1074,
+        "no_perp_share": 0.701502,
+        "no_perp_sources": {
+          "prev_run_id": "2026-09-10T11:32:07Z-34471350767",
+          "no_venue_at_all": 1074,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 1,
+          "new_coin": 39,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.000931,
+          "share_new_coin": 0.036313
+        }
+      },
+      {
+        "run_id": "2026-09-17T11:53:32Z-35217647560",
+        "run_ts": "2026-09-17T11:53:32Z",
+        "n_lines": 1528,
+        "enter_n": 1,
+        "reject_counts": {
+          "below_top_n": 24,
+          "blacklist": 5,
+          "float_gate": 271,
+          "in_top_not_entered": 14,
+          "low_score": 140,
+          "no_perp": 1073,
+          "none": 1
+        },
+        "no_perp_n": 1073,
+        "no_perp_share": 0.702225,
+        "no_perp_sources": {
+          "prev_run_id": "2026-09-14T13:02:24Z-34846279641",
+          "no_venue_at_all": 1073,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 3,
+          "new_coin": 32,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.002796,
+          "share_new_coin": 0.029823
+        }
+      },
+      {
+        "run_id": "2026-09-21T13:02:09Z-35602489674",
+        "run_ts": "2026-09-21T13:02:09Z",
+        "n_lines": 1593,
+        "enter_n": 1,
+        "reject_counts": {
+          "below_top_n": 15,
+          "blacklist": 5,
+          "float_gate": 265,
+          "in_top_not_entered": 14,
+          "low_score": 152,
+          "no_perp": 1141,
+          "none": 1
+        },
+        "no_perp_n": 1141,
+        "no_perp_share": 0.716259,
+        "no_perp_sources": {
+          "prev_run_id": "2026-09-17T11:53:32Z-35217647560",
+          "no_venue_at_all": 1141,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 1,
+          "new_coin": 91,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.000876,
+          "share_new_coin": 0.079755
+        }
+      },
+      {
+        "run_id": "2026-09-24T11:59:25Z-35995774575",
+        "run_ts": "2026-09-24T11:59:25Z",
+        "n_lines": 1581,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 36,
+          "blacklist": 5,
+          "float_gate": 269,
+          "in_top_not_entered": 13,
+          "low_score": 132,
+          "no_perp": 1124,
+          "none": 2
+        },
+        "no_perp_n": 1124,
+        "no_perp_share": 0.710942,
+        "no_perp_sources": {
+          "prev_run_id": "2026-09-21T13:02:09Z-35602489674",
+          "no_venue_at_all": 1124,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 1,
+          "new_coin": 33,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.00089,
+          "share_new_coin": 0.029359
+        }
+      },
+      {
+        "run_id": "2026-09-28T14:10:27Z-36433356462",
+        "run_ts": "2026-09-28T14:10:27Z",
+        "n_lines": 1591,
+        "enter_n": 3,
+        "reject_counts": {
+          "below_top_n": 25,
+          "blacklist": 5,
+          "float_gate": 258,
+          "in_top_not_entered": 13,
+          "low_score": 140,
+          "no_perp": 1147,
+          "none": 3
+        },
+        "no_perp_n": 1147,
+        "no_perp_share": 0.72093,
+        "no_perp_sources": {
+          "prev_run_id": "2026-09-24T11:59:25Z-35995774575",
+          "no_venue_at_all": 1147,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 9,
+          "new_coin": 41,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.007847,
+          "share_new_coin": 0.035745
+        }
+      },
+      {
+        "run_id": "2026-10-01T13:31:57Z-36868724587",
+        "run_ts": "2026-10-01T13:31:57Z",
+        "n_lines": 1583,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 14,
+          "blacklist": 5,
+          "float_gate": 257,
+          "in_top_not_entered": 13,
+          "low_score": 153,
+          "no_perp": 1139,
+          "none": 2
+        },
+        "no_perp_n": 1139,
+        "no_perp_share": 0.71952,
+        "no_perp_sources": {
+          "prev_run_id": "2026-09-28T14:10:27Z-36433356462",
+          "no_venue_at_all": 1139,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 2,
+          "new_coin": 28,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.001756,
+          "share_new_coin": 0.024583
+        }
+      },
+      {
+        "run_id": "2026-10-05T14:55:57Z-37328039253",
+        "run_ts": "2026-10-05T14:55:57Z",
+        "n_lines": 1583,
+        "enter_n": 3,
+        "reject_counts": {
+          "below_top_n": 14,
+          "blacklist": 6,
+          "float_gate": 251,
+          "in_top_not_entered": 12,
+          "low_score": 153,
+          "no_perp": 1144,
+          "none": 3
+        },
+        "no_perp_n": 1144,
+        "no_perp_share": 0.722678,
+        "no_perp_sources": {
+          "prev_run_id": "2026-10-01T13:31:57Z-36868724587",
+          "no_venue_at_all": 1144,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 8,
+          "new_coin": 31,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.006993,
+          "share_new_coin": 0.027098
+        }
+      },
+      {
+        "run_id": "2026-10-08T13:43:25Z-37785934542",
+        "run_ts": "2026-10-08T13:43:25Z",
+        "n_lines": 1552,
+        "enter_n": 1,
+        "reject_counts": {
+          "below_top_n": 13,
+          "blacklist": 6,
+          "float_gate": 249,
+          "in_top_not_entered": 14,
+          "low_score": 151,
+          "no_perp": 1118,
+          "none": 1
+        },
+        "no_perp_n": 1118,
+        "no_perp_share": 0.720361,
+        "no_perp_sources": {
+          "prev_run_id": "2026-10-05T14:55:57Z-37328039253",
+          "no_venue_at_all": 1118,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 0,
+          "new_coin": 31,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.0,
+          "share_new_coin": 0.027728
+        }
+      },
+      {
+        "run_id": "2026-10-12T15:42:49Z-38271625909",
+        "run_ts": "2026-10-12T15:42:49Z",
+        "n_lines": 1559,
+        "enter_n": 1,
+        "reject_counts": {
+          "below_top_n": 14,
+          "blacklist": 6,
+          "float_gate": 251,
+          "in_top_not_entered": 15,
+          "low_score": 151,
+          "no_perp": 1121,
+          "none": 1
+        },
+        "no_perp_n": 1121,
+        "no_perp_share": 0.719051,
+        "no_perp_sources": {
+          "prev_run_id": "2026-10-08T13:43:25Z-37785934542",
+          "no_venue_at_all": 1121,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 0,
+          "new_coin": 36,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.0,
+          "share_new_coin": 0.032114
+        }
+      },
+      {
+        "run_id": "2026-10-15T11:43:15Z-38728742101",
+        "run_ts": "2026-10-15T11:43:15Z",
+        "n_lines": 1528,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 35,
+          "blacklist": 6,
+          "float_gate": 244,
+          "in_top_not_entered": 14,
+          "low_score": 128,
+          "no_perp": 1099,
+          "none": 2
+        },
+        "no_perp_n": 1099,
+        "no_perp_share": 0.719241,
+        "no_perp_sources": {
+          "prev_run_id": "2026-10-12T15:42:49Z-38271625909",
+          "no_venue_at_all": 1099,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 10,
+          "new_coin": 28,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.009099,
+          "share_new_coin": 0.025478
+        }
+      },
+      {
+        "run_id": "2026-10-19T13:34:20Z-39260584589",
+        "run_ts": "2026-10-19T13:34:20Z",
+        "n_lines": 1522,
+        "enter_n": 3,
+        "reject_counts": {
+          "below_top_n": 24,
+          "blacklist": 6,
+          "float_gate": 244,
+          "in_top_not_entered": 13,
+          "low_score": 137,
+          "no_perp": 1095,
+          "none": 3
+        },
+        "no_perp_n": 1095,
+        "no_perp_share": 0.719448,
+        "no_perp_sources": {
+          "prev_run_id": "2026-10-15T11:43:15Z-38728742101",
+          "no_venue_at_all": 1095,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 6,
+          "new_coin": 30,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.005479,
+          "share_new_coin": 0.027397
+        }
+      },
+      {
+        "run_id": "2026-10-22T12:05:49Z-39774945712",
+        "run_ts": "2026-10-22T12:05:49Z",
+        "n_lines": 1513,
+        "enter_n": 1,
+        "reject_counts": {
+          "below_top_n": 23,
+          "blacklist": 5,
+          "float_gate": 238,
+          "in_top_not_entered": 17,
+          "low_score": 139,
+          "no_perp": 1090,
+          "none": 1
+        },
+        "no_perp_n": 1090,
+        "no_perp_share": 0.720423,
+        "no_perp_sources": {
+          "prev_run_id": "2026-10-19T13:34:20Z-39260584589",
+          "no_venue_at_all": 1090,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 1,
+          "new_coin": 26,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.000917,
+          "share_new_coin": 0.023853
+        }
+      },
+      {
+        "run_id": "2026-10-26T13:18:38Z-40328709930",
+        "run_ts": "2026-10-26T13:18:38Z",
+        "n_lines": 1504,
+        "enter_n": 2,
+        "reject_counts": {
+          "below_top_n": 37,
+          "blacklist": 5,
+          "float_gate": 236,
+          "in_top_not_entered": 15,
+          "low_score": 121,
+          "no_perp": 1088,
+          "none": 2
+        },
+        "no_perp_n": 1088,
+        "no_perp_share": 0.723404,
+        "no_perp_sources": {
+          "prev_run_id": "2026-10-22T12:05:49Z-39774945712",
+          "no_venue_at_all": 1088,
+          "venues_but_no_perp": 0,
+          "venues_field_missing": 0,
+          "vanished_since_prev": 11,
+          "new_coin": 23,
+          "share_no_venue_at_all": 1.0,
+          "share_vanished_since_prev": 0.01011,
+          "share_new_coin": 0.02114
+        }
+      }
+    ],
+    "no_perp_trend": [
+      [
+        "2026-08-03T10:12:58Z",
+        0.68684
+      ],
+      [
+        "2026-08-06T09:14:17Z",
+        0.684507
+      ],
+      [
+        "2026-08-10T08:12:11Z",
+        0.683731
+      ],
+      [
+        "2026-08-13T08:01:24Z",
+        0.677557
+      ],
+      [
+        "2026-08-17T07:23:16Z",
+        0.677054
+      ],
+      [
+        "2026-08-20T07:13:58Z",
+        0.686806
+      ],
+      [
+        "2026-08-24T07:35:52Z",
+        0.698529
+      ],
+      [
+        "2026-08-27T17:45:57Z",
+        0.702827
+      ],
+      [
+        "2026-08-31T14:05:12Z",
+        0.694204
+      ],
+      [
+        "2026-09-03T11:26:36Z",
+        0.698667
+      ],
+      [
+        "2026-09-07T12:47:24Z",
+        0.69793
+      ],
+      [
+        "2026-09-10T11:32:07Z",
+        0.697659
+      ],
+      [
+        "2026-09-14T13:02:24Z",
+        0.701502
+      ],
+      [
+        "2026-09-17T11:53:32Z",
+        0.702225
+      ],
+      [
+        "2026-09-21T13:02:09Z",
+        0.716259
+      ],
+      [
+        "2026-09-24T11:59:25Z",
+        0.710942
+      ],
+      [
+        "2026-09-28T14:10:27Z",
+        0.72093
+      ],
+      [
+        "2026-10-01T13:31:57Z",
+        0.71952
+      ],
+      [
+        "2026-10-05T14:55:57Z",
+        0.722678
+      ],
+      [
+        "2026-10-08T13:43:25Z",
+        0.720361
+      ],
+      [
+        "2026-10-12T15:42:49Z",
+        0.719051
+      ],
+      [
+        "2026-10-15T11:43:15Z",
+        0.719241
+      ],
+      [
+        "2026-10-19T13:34:20Z",
+        0.719448
+      ],
+      [
+        "2026-10-22T12:05:49Z",
+        0.720423
+      ],
+      [
+        "2026-10-26T13:18:38Z",
+        0.723404
+      ]
+    ],
+    "weekly": [
+      {
+        "week": "2026-W32",
+        "n_runs": 2,
+        "n_lines": 2841,
+        "no_perp_n": 1948,
+        "share": 0.685674
+      },
+      {
+        "week": "2026-W33",
+        "n_runs": 2,
+        "n_lines": 2834,
+        "no_perp_n": 1929,
+        "share": 0.680663
+      },
+      {
+        "week": "2026-W34",
+        "n_runs": 2,
+        "n_lines": 2852,
+        "no_perp_n": 1945,
+        "share": 0.681978
+      },
+      {
+        "week": "2026-W35",
+        "n_runs": 2,
+        "n_lines": 3017,
+        "no_perp_n": 2114,
+        "share": 0.700696
+      },
+      {
+        "week": "2026-W36",
+        "n_runs": 2,
+        "n_lines": 3001,
+        "no_perp_n": 2090,
+        "share": 0.696435
+      },
+      {
+        "week": "2026-W37",
+        "n_runs": 2,
+        "n_lines": 3084,
+        "no_perp_n": 2152,
+        "share": 0.697795
+      },
+      {
+        "week": "2026-W38",
+        "n_runs": 2,
+        "n_lines": 3059,
+        "no_perp_n": 2147,
+        "share": 0.701863
+      },
+      {
+        "week": "2026-W39",
+        "n_runs": 2,
+        "n_lines": 3174,
+        "no_perp_n": 2265,
+        "share": 0.713611
+      },
+      {
+        "week": "2026-W40",
+        "n_runs": 2,
+        "n_lines": 3174,
+        "no_perp_n": 2286,
+        "share": 0.720227
+      },
+      {
+        "week": "2026-W41",
+        "n_runs": 2,
+        "n_lines": 3135,
+        "no_perp_n": 2262,
+        "share": 0.721531
+      },
+      {
+        "week": "2026-W42",
+        "n_runs": 2,
+        "n_lines": 3087,
+        "no_perp_n": 2220,
+        "share": 0.719145
+      },
+      {
+        "week": "2026-W43",
+        "n_runs": 2,
+        "n_lines": 3035,
+        "no_perp_n": 2185,
+        "share": 0.719934
+      },
+      {
+        "week": "2026-W44",
+        "n_runs": 1,
+        "n_lines": 1504,
+        "no_perp_n": 1088,
+        "share": 0.723404
+      }
+    ],
+    "delta_last_week_pp": 0.347,
+    "note": "разрезы no_perp не складываются в общее число: no_venue_at_all — признак монеты в текущем прогоне, vanished_since_prev и new_coin — её история относительно предыдущего прогона"
+  },
+  "note": "Числа посчитаны кодом (metrics.py) по ЗАКРЫТЫМ сделкам. Открытые позиции не участвуют (§2 замороженных правил). net содержит допущение о слиппедже — читать вместе с таблицей sensitivity. Класс ликвидности подставлен худшим (thin) у 153 сделок из 780 загруженных, из них закрытых 151 — поля liq_class_fallback_n_all и liq_class_fallback_n_closed."
+}

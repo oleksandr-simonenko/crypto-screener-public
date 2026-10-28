@@ -1,0 +1,35 @@
+{
+ "provenance": {
+  "git_sha": "30d87fcda937",
+  "generated_utc": "2026-10-26T14:16:59Z",
+  "tool_version": "1.0.0",
+  "python": "3.12.15"
+ },
+ "csv_file": "flows_latest.csv",
+ "note": "Провенанс лежит отдельным файлом, потому что схема csv зафиксирована контрактом и лишних колонок не допускает.",
+ "note_csv_injection": "Нечисловые поля, начинавшиеся с '=', '+', '-' или '@', записаны с ведущим апострофом: иначе Excel исполнил бы чужое имя монеты как формулу. Числа (в т.ч. отрицательный pnl) не тронуты.",
+ "schema": [
+  "ticker",
+  "cg_id",
+  "run_timestamp",
+  "score",
+  "mcap_usd",
+  "price_usd",
+  "entered_paper",
+  "chain",
+  "contract"
+ ],
+ "source_json": "flows_latest.json",
+ "source_generated_utc": "2026-10-23T13:22:27Z",
+ "source_bytes": 11876,
+ "source_sha256": "b1695ed81f4d7415bce68f0ebb6cb81b4a92e8b196488937eee2025acbb9ce56",
+ "source_sha256_raw": "b1695ed81f4d7415bce68f0ebb6cb81b4a92e8b196488937eee2025acbb9ce56",
+ "source_crlf": false,
+ "source_schema_version": 1,
+ "source_valid": true,
+ "source_problems": [],
+ "source_contract": "STATE.md §11 — контракт flows_latest.json для stage0: source_sha256 — от LF-нормализованных байтов (канон, = `git show HEAD:export/flows_latest.json | sha256sum`), source_sha256_raw — как файл лежал у экспортёра; забирать только при source_valid=true",
+ "n_rows": 45,
+ "n_coins": 23,
+ "note_rows": "одна строка на пару сеть-контракт; без контрактов — одна пустая пара"
+}

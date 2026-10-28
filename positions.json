@@ -1,0 +1,2088 @@
+{
+  "open": [
+    {
+      "sym": "ZORA",
+      "name": "Zora",
+      "cg_id": "zora",
+      "entry_date": "2026-08-31",
+      "entry_price": 0.00937186,
+      "last_price": 0.00610845,
+      "peak_price": 0.00937186,
+      "trough_price": 0.00610845,
+      "score": 75,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 56,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -22.4,
+          "date": "2026-09-03"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -30.9,
+          "date": "2026-10-15"
+        }
+      }
+    },
+    {
+      "sym": "BTR",
+      "name": "Bitlayer",
+      "cg_id": "bitlayer-bitvm",
+      "entry_date": "2026-09-03",
+      "entry_price": 0.05154,
+      "last_price": 0.056166,
+      "peak_price": 0.056251,
+      "trough_price": 0.04304798,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 53,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -16.5,
+          "date": "2026-10-19"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "ROBO",
+      "name": "Fabric Protocol",
+      "cg_id": "robo-token-2",
+      "entry_date": "2026-09-03",
+      "entry_price": 0.01172245,
+      "last_price": 0.00552578,
+      "peak_price": 0.01172245,
+      "trough_price": 0.00552578,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 53,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -28.7,
+          "date": "2026-09-14"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -30.8,
+          "date": "2026-10-08"
+        }
+      }
+    },
+    {
+      "sym": "FLOCK",
+      "name": "FLOCK",
+      "cg_id": "flock-2",
+      "entry_date": "2026-09-03",
+      "entry_price": 0.0391626,
+      "last_price": 0.04052161,
+      "peak_price": 0.075968,
+      "trough_price": 0.0391626,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 53,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": 49.3,
+          "date": "2026-10-08"
+        },
+        "t30": {
+          "fired": true,
+          "ret": 30.2,
+          "date": "2026-10-12"
+        }
+      }
+    },
+    {
+      "sym": "DEBIT",
+      "name": "Teller",
+      "cg_id": "teller",
+      "entry_date": "2026-09-07",
+      "entry_price": 1.7,
+      "last_price": 1.1,
+      "peak_price": 3.25,
+      "trough_price": 1.1,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 49,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": 50.6,
+          "date": "2026-09-17"
+        },
+        "t30": {
+          "fired": true,
+          "ret": 21.2,
+          "date": "2026-09-24"
+        }
+      }
+    },
+    {
+      "sym": "HEMI",
+      "name": "Hemi",
+      "cg_id": "hemi",
+      "entry_date": "2026-09-07",
+      "entry_price": 0.00894011,
+      "last_price": 0.00464751,
+      "peak_price": 0.00894011,
+      "trough_price": 0.00464751,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 49,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -31.5,
+          "date": "2026-09-14"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -31.5,
+          "date": "2026-09-14"
+        }
+      }
+    },
+    {
+      "sym": "BIRB",
+      "name": "Moonbirds",
+      "cg_id": "moonbirds",
+      "entry_date": "2026-09-10",
+      "entry_price": 0.067928,
+      "last_price": 0.067341,
+      "peak_price": 0.068154,
+      "trough_price": 0.04672381,
+      "score": 90,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 46,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -27.3,
+          "date": "2026-10-15"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -31.2,
+          "date": "2026-10-19"
+        }
+      }
+    },
+    {
+      "sym": "TREE",
+      "name": "Treehouse",
+      "cg_id": "treehouse",
+      "entry_date": "2026-09-14",
+      "entry_price": 0.04501643,
+      "last_price": 0.03792392,
+      "peak_price": 0.04698554,
+      "trough_price": 0.03618644,
+      "score": 80,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 42,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -19.6,
+          "date": "2026-10-19"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "SOPH",
+      "name": "Sophon",
+      "cg_id": "sophon",
+      "entry_date": "2026-09-17",
+      "entry_price": 0.00390844,
+      "last_price": 0.00141988,
+      "peak_price": 0.00444019,
+      "trough_price": 0.00141988,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 39,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -10.2,
+          "date": "2026-09-28"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -37.2,
+          "date": "2026-10-15"
+        }
+      }
+    },
+    {
+      "sym": "OPN",
+      "name": "Opinion",
+      "cg_id": "opinion",
+      "entry_date": "2026-09-21",
+      "entry_price": 0.05003,
+      "last_price": 0.0485238,
+      "peak_price": 0.06447,
+      "trough_price": 0.04831163,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 35,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -3.4,
+          "date": "2026-10-19"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "CP",
+      "name": "Cluster Protocol",
+      "cg_id": "cluster-protocol",
+      "entry_date": "2026-09-24",
+      "entry_price": 0.01268577,
+      "last_price": 0.00857386,
+      "peak_price": 0.01268577,
+      "trough_price": 0.00845966,
+      "score": 65,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 32,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -30.0,
+          "date": "2026-10-15"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -30.0,
+          "date": "2026-10-15"
+        }
+      }
+    },
+    {
+      "sym": "B2",
+      "name": "BSquared Network",
+      "cg_id": "bsquared-network",
+      "entry_date": "2026-09-24",
+      "entry_price": 0.494988,
+      "last_price": 0.421268,
+      "peak_price": 0.535965,
+      "trough_price": 0.407411,
+      "score": 65,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 32,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -17.2,
+          "date": "2026-10-15"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "EDGE",
+      "name": "Definitive",
+      "cg_id": "definitive",
+      "entry_date": "2026-09-28",
+      "entry_price": 0.114952,
+      "last_price": 0.081598,
+      "peak_price": 0.115676,
+      "trough_price": 0.081598,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 28,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -29.0,
+          "date": "2026-10-26"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "LA",
+      "name": "Lagrange",
+      "cg_id": "lagrange",
+      "entry_date": "2026-09-28",
+      "entry_price": 0.067456,
+      "last_price": 0.058367,
+      "peak_price": 0.070001,
+      "trough_price": 0.052913,
+      "score": 75,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 28,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -21.6,
+          "date": "2026-10-19"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "SAGA",
+      "name": "Saga",
+      "cg_id": "saga-2",
+      "entry_date": "2026-09-28",
+      "entry_price": 0.026912,
+      "last_price": 0.01784236,
+      "peak_price": 0.026912,
+      "trough_price": 0.01784236,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 28,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -21.8,
+          "date": "2026-10-12"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -30.3,
+          "date": "2026-10-19"
+        }
+      }
+    },
+    {
+      "sym": "PROMPT",
+      "name": "Wayfinder",
+      "cg_id": "wayfinder",
+      "entry_date": "2026-10-01",
+      "entry_price": 0.02262408,
+      "last_price": 0.01704593,
+      "peak_price": 0.02262408,
+      "trough_price": 0.01672824,
+      "score": 80,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 25,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -23.2,
+          "date": "2026-10-15"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "LAYER",
+      "name": "Solayer",
+      "cg_id": "solayer",
+      "entry_date": "2026-10-01",
+      "entry_price": 0.076278,
+      "last_price": 0.064717,
+      "peak_price": 0.077052,
+      "trough_price": 0.064359,
+      "score": 65,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 25,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "SCR",
+      "name": "Scroll",
+      "cg_id": "scroll",
+      "entry_date": "2026-10-05",
+      "entry_price": 0.02860248,
+      "last_price": 0.01948776,
+      "peak_price": 0.02860248,
+      "trough_price": 0.01948776,
+      "score": 95,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 21,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -26.1,
+          "date": "2026-10-15"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -31.5,
+          "date": "2026-10-19"
+        }
+      }
+    },
+    {
+      "sym": "US",
+      "name": "Talus",
+      "cg_id": "talus",
+      "entry_date": "2026-10-05",
+      "entry_price": 0.01167766,
+      "last_price": 0.00453341,
+      "peak_price": 0.01434645,
+      "trough_price": 0.00453341,
+      "score": 70,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 21,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -4.5,
+          "date": "2026-10-12"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -42.2,
+          "date": "2026-10-15"
+        }
+      }
+    },
+    {
+      "sym": "ZKP",
+      "name": "zkPass",
+      "cg_id": "zkpass",
+      "entry_date": "2026-10-05",
+      "entry_price": 0.05133,
+      "last_price": 0.04155479,
+      "peak_price": 0.05133,
+      "trough_price": 0.040541,
+      "score": 70,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 21,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -21.0,
+          "date": "2026-10-19"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "SHELL",
+      "name": "MyShell",
+      "cg_id": "myshell",
+      "entry_date": "2026-10-08",
+      "entry_price": 0.024011,
+      "last_price": 0.02217601,
+      "peak_price": 0.024011,
+      "trough_price": 0.02114558,
+      "score": 65,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 18,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "XDP",
+      "name": "Doppler Finance",
+      "cg_id": "doppler-finance",
+      "entry_date": "2026-10-12",
+      "entry_price": 0.02114608,
+      "last_price": 0.01852503,
+      "peak_price": 0.02114608,
+      "trough_price": 0.01852503,
+      "score": 65,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 14,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "AIA",
+      "name": "DeAgentAI",
+      "cg_id": "aia",
+      "entry_date": "2026-10-15",
+      "entry_price": 0.075057,
+      "last_price": 0.069911,
+      "peak_price": 0.075549,
+      "trough_price": 0.069911,
+      "score": 70,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 11,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "NEWT",
+      "name": "Newton Protocol",
+      "cg_id": "newton-protocol",
+      "entry_date": "2026-10-15",
+      "entry_price": 0.0421426,
+      "last_price": 0.04364054,
+      "peak_price": 0.04364054,
+      "trough_price": 0.04129889,
+      "score": 68,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 11,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "KAT",
+      "name": "Katana",
+      "cg_id": "katana-network-token",
+      "entry_date": "2026-10-19",
+      "entry_price": 0.00411587,
+      "last_price": 0.0047394,
+      "peak_price": 0.0047394,
+      "trough_price": 0.00394132,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 7,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "WHUF",
+      "name": "Whuffie",
+      "cg_id": "whuffie",
+      "entry_date": "2026-10-19",
+      "entry_price": 2.56,
+      "last_price": 2.15,
+      "peak_price": 2.79,
+      "trough_price": 2.15,
+      "score": 70,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 7,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -16.0,
+          "date": "2026-10-26"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "BLEND",
+      "name": "Fluent",
+      "cg_id": "fluent-network",
+      "entry_date": "2026-10-19",
+      "entry_price": 0.04914103,
+      "last_price": 0.052115,
+      "peak_price": 0.052115,
+      "trough_price": 0.04914103,
+      "score": 70,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 7,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "DNA",
+      "name": "NeoSoul",
+      "cg_id": "neosoul",
+      "entry_date": "2026-10-22",
+      "entry_price": 0.201238,
+      "last_price": 0.189888,
+      "peak_price": 0.201238,
+      "trough_price": 0.189888,
+      "score": 65,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 4,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      }
+    },
+    {
+      "sym": "IRYS",
+      "name": "Irys",
+      "cg_id": "irys",
+      "entry_date": "2026-10-26",
+      "entry_price": 0.02854032,
+      "last_price": 0.02854032,
+      "peak_price": 0.02854032,
+      "trough_price": 0.02854032,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 0
+    },
+    {
+      "sym": "BREV",
+      "name": "Brevis",
+      "cg_id": "brevis",
+      "entry_date": "2026-10-26",
+      "entry_price": 0.080131,
+      "last_price": 0.080131,
+      "peak_price": 0.080131,
+      "trough_price": 0.080131,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 0
+    }
+  ],
+  "closed": [
+    {
+      "sym": "VANA",
+      "name": "Vana",
+      "cg_id": "vana",
+      "entry_date": "2026-07-14",
+      "entry_price": 1.23,
+      "last_price": 0.960313,
+      "peak_price": 1.28,
+      "trough_price": 0.831181,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 62,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -32.4,
+          "date": "2026-08-03"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -32.4,
+          "date": "2026-08-03"
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.960313,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -21.9,
+      "peak_ret_pct": 4.1,
+      "shadow_t20_ret": -32.4,
+      "shadow_t30_ret": -32.4
+    },
+    {
+      "sym": "ID",
+      "name": "SPACE ID",
+      "cg_id": "space-id",
+      "entry_date": "2026-07-14",
+      "entry_price": 0.03544736,
+      "last_price": 0.03286366,
+      "peak_price": 0.03544736,
+      "trough_price": 0.02659532,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 62,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -22.9,
+          "date": "2026-07-30"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.03286366,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -7.3,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -22.9,
+      "shadow_t30_ret": -7.3
+    },
+    {
+      "sym": "TREE",
+      "name": "Treehouse",
+      "cg_id": "treehouse",
+      "entry_date": "2026-07-14",
+      "entry_price": 0.04528543,
+      "last_price": 0.04502163,
+      "peak_price": 0.04529771,
+      "trough_price": 0.03404331,
+      "score": 80,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 62,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -20.9,
+          "date": "2026-07-30"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.04502163,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -0.6,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -20.9,
+      "shadow_t30_ret": -0.6
+    },
+    {
+      "sym": "SXT",
+      "name": "Space and Time",
+      "cg_id": "space-and-time",
+      "entry_date": "2026-07-14",
+      "entry_price": 0.00924896,
+      "last_price": 0.00828452,
+      "peak_price": 0.01007662,
+      "trough_price": 0.00659275,
+      "score": 75,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 62,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -24.2,
+          "date": "2026-07-27"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -24.2,
+          "date": "2026-07-27"
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.00828452,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -10.4,
+      "peak_ret_pct": 8.9,
+      "shadow_t20_ret": -24.2,
+      "shadow_t30_ret": -24.2
+    },
+    {
+      "sym": "NEWT",
+      "name": "Newton Protocol",
+      "cg_id": "newton-protocol",
+      "entry_date": "2026-07-14",
+      "entry_price": 0.04684785,
+      "last_price": 0.04420576,
+      "peak_price": 0.04707957,
+      "trough_price": 0.03725197,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 62,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -20.5,
+          "date": "2026-08-17"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.04420576,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -5.6,
+      "peak_ret_pct": 0.5,
+      "shadow_t20_ret": -20.5,
+      "shadow_t30_ret": -5.6
+    },
+    {
+      "sym": "ASP",
+      "name": "Aspecta",
+      "cg_id": "aspecta",
+      "entry_date": "2026-07-14",
+      "entry_price": 0.01495542,
+      "last_price": 0.00950897,
+      "peak_price": 0.01535859,
+      "trough_price": 0.00948855,
+      "score": 80,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 62,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -20.4,
+          "date": "2026-07-30"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -36.6,
+          "date": "2026-08-17"
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.00950897,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -36.4,
+      "peak_ret_pct": 2.7,
+      "shadow_t20_ret": -20.4,
+      "shadow_t30_ret": -36.6
+    },
+    {
+      "sym": "SLX",
+      "name": "Solstice",
+      "cg_id": "solstice",
+      "entry_date": "2026-07-14",
+      "entry_price": 0.136358,
+      "last_price": 0.06292,
+      "peak_price": 0.136358,
+      "trough_price": 0.06292,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 62,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -23.8,
+          "date": "2026-07-27"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -36.1,
+          "date": "2026-07-30"
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.06292,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -53.9,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -23.8,
+      "shadow_t30_ret": -36.1
+    },
+    {
+      "sym": "BILL",
+      "name": "Billions Network",
+      "cg_id": "billions-network",
+      "entry_date": "2026-07-16",
+      "entry_price": 0.02931664,
+      "last_price": 0.0128164,
+      "peak_price": 0.02931664,
+      "trough_price": 0.0128164,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -20.0,
+          "date": "2026-07-30"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -30.8,
+          "date": "2026-08-17"
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.0128164,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -56.3,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -20.0,
+      "shadow_t30_ret": -30.8
+    },
+    {
+      "sym": "HOME",
+      "name": "HOME",
+      "cg_id": "home",
+      "entry_date": "2026-07-16",
+      "entry_price": 0.01389132,
+      "last_price": 0.0054216,
+      "peak_price": 0.01389132,
+      "trough_price": 0.00515197,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -58.6,
+          "date": "2026-07-27"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -58.6,
+          "date": "2026-07-27"
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.0054216,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -61.0,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -58.6,
+      "shadow_t30_ret": -58.6
+    },
+    {
+      "sym": "0G",
+      "name": "0G",
+      "cg_id": "zero-gravity",
+      "entry_date": "2026-07-16",
+      "entry_price": 0.184384,
+      "last_price": 0.198989,
+      "peak_price": 0.210718,
+      "trough_price": 0.13861,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -20.6,
+          "date": "2026-07-30"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-14",
+      "close_price": 0.198989,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 7.9,
+      "peak_ret_pct": 14.3,
+      "shadow_t20_ret": -20.6,
+      "shadow_t30_ret": 7.9
+    },
+    {
+      "sym": "RE",
+      "name": "RE",
+      "cg_id": "re",
+      "entry_date": "2026-07-20",
+      "entry_price": 0.378184,
+      "last_price": 0.467851,
+      "peak_price": 0.566833,
+      "trough_price": 0.376533,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -0.4,
+          "date": "2026-08-06"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-21",
+      "close_price": 0.467851,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 23.7,
+      "peak_ret_pct": 49.9,
+      "shadow_t20_ret": -0.4,
+      "shadow_t30_ret": 23.7
+    },
+    {
+      "sym": "LAYER",
+      "name": "Solayer",
+      "cg_id": "solayer",
+      "entry_date": "2026-07-20",
+      "entry_price": 0.063315,
+      "last_price": 0.076174,
+      "peak_price": 0.076174,
+      "trough_price": 0.059328,
+      "score": 75,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-21",
+      "close_price": 0.076174,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 20.3,
+      "peak_ret_pct": 20.3,
+      "shadow_t20_ret": 20.3,
+      "shadow_t30_ret": 20.3
+    },
+    {
+      "sym": "ERA",
+      "name": "Caldera",
+      "cg_id": "caldera",
+      "entry_date": "2026-07-23",
+      "entry_price": 0.107031,
+      "last_price": 0.066581,
+      "peak_price": 0.107031,
+      "trough_price": 0.055875,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -32.1,
+          "date": "2026-07-27"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -32.1,
+          "date": "2026-07-27"
+        }
+      },
+      "close_date": "2026-09-21",
+      "close_price": 0.066581,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -37.8,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -32.1,
+      "shadow_t30_ret": -32.1
+    },
+    {
+      "sym": "MIRA",
+      "name": "Mira",
+      "cg_id": "mira-3",
+      "entry_date": "2026-07-23",
+      "entry_price": 0.04772606,
+      "last_price": 0.053702,
+      "peak_price": 0.053702,
+      "trough_price": 0.03902991,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-21",
+      "close_price": 0.053702,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 12.5,
+      "peak_ret_pct": 12.5,
+      "shadow_t20_ret": 12.5,
+      "shadow_t30_ret": 12.5
+    },
+    {
+      "sym": "ZKC",
+      "name": "Boundless",
+      "cg_id": "boundless",
+      "entry_date": "2026-07-23",
+      "entry_price": 0.04537969,
+      "last_price": 0.04121593,
+      "peak_price": 0.054863,
+      "trough_price": 0.03725622,
+      "score": 85,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -17.1,
+          "date": "2026-09-17"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -17.1,
+          "date": "2026-09-17"
+        }
+      },
+      "close_date": "2026-09-21",
+      "close_price": 0.04121593,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -9.2,
+      "peak_ret_pct": 20.9,
+      "shadow_t20_ret": -17.1,
+      "shadow_t30_ret": -17.1
+    },
+    {
+      "sym": "ZAMA",
+      "name": "Zama",
+      "cg_id": "zama",
+      "entry_date": "2026-07-23",
+      "entry_price": 0.04962237,
+      "last_price": 0.10515,
+      "peak_price": 0.10515,
+      "trough_price": 0.04223896,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -7.0,
+          "date": "2026-08-10"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-21",
+      "close_price": 0.10515,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 111.9,
+      "peak_ret_pct": 111.9,
+      "shadow_t20_ret": -7.0,
+      "shadow_t30_ret": 111.9
+    },
+    {
+      "sym": "O",
+      "name": "o1.exchange",
+      "cg_id": "o1-exchange",
+      "entry_date": "2026-07-23",
+      "entry_price": 0.645008,
+      "last_price": 0.550679,
+      "peak_price": 0.645008,
+      "trough_price": 0.427202,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -28.9,
+          "date": "2026-07-27"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -33.8,
+          "date": "2026-08-13"
+        }
+      },
+      "close_date": "2026-09-21",
+      "close_price": 0.550679,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -14.6,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -28.9,
+      "shadow_t30_ret": -33.8
+    },
+    {
+      "sym": "ESP",
+      "name": "Espresso",
+      "cg_id": "espresso",
+      "entry_date": "2026-07-27",
+      "entry_price": 0.089797,
+      "last_price": 0.098578,
+      "peak_price": 0.098578,
+      "trough_price": 0.059929,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -27.6,
+          "date": "2026-08-03"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -33.3,
+          "date": "2026-08-06"
+        }
+      },
+      "close_date": "2026-09-28",
+      "close_price": 0.098578,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 9.8,
+      "peak_ret_pct": 9.8,
+      "shadow_t20_ret": -27.6,
+      "shadow_t30_ret": -33.3
+    },
+    {
+      "sym": "IRYS",
+      "name": "Irys",
+      "cg_id": "irys",
+      "entry_date": "2026-07-27",
+      "entry_price": 0.01362183,
+      "last_price": 0.01703918,
+      "peak_price": 0.01703918,
+      "trough_price": 0.01343226,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-28",
+      "close_price": 0.01703918,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 25.1,
+      "peak_ret_pct": 25.1,
+      "shadow_t20_ret": 25.1,
+      "shadow_t30_ret": 25.1
+    },
+    {
+      "sym": "LA",
+      "name": "Lagrange",
+      "cg_id": "lagrange",
+      "entry_date": "2026-07-30",
+      "entry_price": 0.052729,
+      "last_price": 0.067633,
+      "peak_price": 0.074391,
+      "trough_price": 0.04508236,
+      "score": 80,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-28",
+      "close_price": 0.067633,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 28.3,
+      "peak_ret_pct": 41.1,
+      "shadow_t20_ret": 28.3,
+      "shadow_t30_ret": 28.3
+    },
+    {
+      "sym": "EDGE",
+      "name": "Definitive",
+      "cg_id": "definitive",
+      "entry_date": "2026-07-30",
+      "entry_price": 0.069518,
+      "last_price": 0.114088,
+      "peak_price": 0.114088,
+      "trough_price": 0.061679,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-09-28",
+      "close_price": 0.114088,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 64.1,
+      "peak_ret_pct": 64.1,
+      "shadow_t20_ret": 64.1,
+      "shadow_t30_ret": 64.1
+    },
+    {
+      "sym": "HYPER",
+      "name": "Hyperlane",
+      "cg_id": "hyperlane",
+      "entry_date": "2026-08-03",
+      "entry_price": 0.062554,
+      "last_price": 0.071712,
+      "peak_price": 0.075023,
+      "trough_price": 0.060464,
+      "score": 90,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-05",
+      "close_price": 0.071712,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 14.6,
+      "peak_ret_pct": 19.9,
+      "shadow_t20_ret": 14.6,
+      "shadow_t30_ret": 14.6
+    },
+    {
+      "sym": "MMT",
+      "name": "Momentum",
+      "cg_id": "momentum-3",
+      "entry_date": "2026-08-03",
+      "entry_price": 0.154126,
+      "last_price": 0.182433,
+      "peak_price": 0.198975,
+      "trough_price": 0.135708,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": 0.6,
+          "date": "2026-08-31"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -11.9,
+          "date": "2026-09-17"
+        }
+      },
+      "close_date": "2026-10-05",
+      "close_price": 0.182433,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 18.4,
+      "peak_ret_pct": 29.1,
+      "shadow_t20_ret": 0.6,
+      "shadow_t30_ret": -11.9
+    },
+    {
+      "sym": "SIGN",
+      "name": "Sign",
+      "cg_id": "sign-global",
+      "entry_date": "2026-08-06",
+      "entry_price": 0.00654373,
+      "last_price": 0.01254673,
+      "peak_price": 0.01277993,
+      "trough_price": 0.00654373,
+      "score": 80,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-05",
+      "close_price": 0.01254673,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 91.7,
+      "peak_ret_pct": 95.3,
+      "shadow_t20_ret": 91.7,
+      "shadow_t30_ret": 91.7
+    },
+    {
+      "sym": "CAP",
+      "name": "Cap",
+      "cg_id": "cap-4",
+      "entry_date": "2026-08-06",
+      "entry_price": 0.02912453,
+      "last_price": 0.066895,
+      "peak_price": 0.077216,
+      "trough_price": 0.02912453,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": 66.9,
+          "date": "2026-09-03"
+        },
+        "t30": {
+          "fired": true,
+          "ret": 66.9,
+          "date": "2026-09-03"
+        }
+      },
+      "close_date": "2026-10-05",
+      "close_price": 0.066895,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 129.7,
+      "peak_ret_pct": 165.1,
+      "shadow_t20_ret": 66.9,
+      "shadow_t30_ret": 66.9
+    },
+    {
+      "sym": "ZBT",
+      "name": "ZEROBASE",
+      "cg_id": "zerobase",
+      "entry_date": "2026-08-10",
+      "entry_price": 0.102139,
+      "last_price": 0.079125,
+      "peak_price": 0.102139,
+      "trough_price": 0.076098,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -23.1,
+          "date": "2026-08-17"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-12",
+      "close_price": 0.079125,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -22.5,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -23.1,
+      "shadow_t30_ret": -22.5
+    },
+    {
+      "sym": "DEEP",
+      "name": "DeepBook",
+      "cg_id": "deep",
+      "entry_date": "2026-08-10",
+      "entry_price": 0.01555594,
+      "last_price": 0.02110585,
+      "peak_price": 0.02334376,
+      "trough_price": 0.01332345,
+      "score": 73,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-12",
+      "close_price": 0.02110585,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 35.7,
+      "peak_ret_pct": 50.1,
+      "shadow_t20_ret": 35.7,
+      "shadow_t30_ret": 35.7
+    },
+    {
+      "sym": "DOS",
+      "name": "DAPPOS",
+      "cg_id": "dappos",
+      "entry_date": "2026-08-13",
+      "entry_price": 0.282801,
+      "last_price": 0.295705,
+      "peak_price": 0.295705,
+      "trough_price": 0.204067,
+      "score": 85,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -17.6,
+          "date": "2026-09-03"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -27.8,
+          "date": "2026-09-17"
+        }
+      },
+      "close_date": "2026-10-12",
+      "close_price": 0.295705,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 4.6,
+      "peak_ret_pct": 4.6,
+      "shadow_t20_ret": -17.6,
+      "shadow_t30_ret": -27.8
+    },
+    {
+      "sym": "KAITO",
+      "name": "KAITO",
+      "cg_id": "kaito",
+      "entry_date": "2026-08-13",
+      "entry_price": 0.467474,
+      "last_price": 0.312441,
+      "peak_price": 0.467474,
+      "trough_price": 0.294199,
+      "score": 75,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -27.7,
+          "date": "2026-08-17"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -31.7,
+          "date": "2026-08-27"
+        }
+      },
+      "close_date": "2026-10-12",
+      "close_price": 0.312441,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -33.2,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -27.7,
+      "shadow_t30_ret": -31.7
+    },
+    {
+      "sym": "CHIP",
+      "name": "USD.AI",
+      "cg_id": "chip-2",
+      "entry_date": "2026-08-17",
+      "entry_price": 0.03149603,
+      "last_price": 0.04161375,
+      "peak_price": 0.05865,
+      "trough_price": 0.02877917,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": 34.6,
+          "date": "2026-09-14"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-19",
+      "close_price": 0.04161375,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 32.1,
+      "peak_ret_pct": 86.2,
+      "shadow_t20_ret": 34.6,
+      "shadow_t30_ret": 32.1
+    },
+    {
+      "sym": "HOLO",
+      "name": "Holoworld",
+      "cg_id": "holoworld",
+      "entry_date": "2026-08-17",
+      "entry_price": 0.055343,
+      "last_price": 0.056068,
+      "peak_price": 0.067204,
+      "trough_price": 0.055343,
+      "score": 73,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-19",
+      "close_price": 0.056068,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 1.3,
+      "peak_ret_pct": 21.4,
+      "shadow_t20_ret": 1.3,
+      "shadow_t30_ret": 1.3
+    },
+    {
+      "sym": "KII",
+      "name": "KiiChain",
+      "cg_id": "kiichain",
+      "entry_date": "2026-08-20",
+      "entry_price": 0.068739,
+      "last_price": 0.087925,
+      "peak_price": 0.088376,
+      "trough_price": 0.059661,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-19",
+      "close_price": 0.087925,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 27.9,
+      "peak_ret_pct": 28.6,
+      "shadow_t20_ret": 27.9,
+      "shadow_t30_ret": 27.9
+    },
+    {
+      "sym": "TRIA",
+      "name": "TRIA",
+      "cg_id": "tria",
+      "entry_date": "2026-08-20",
+      "entry_price": 0.00762378,
+      "last_price": 0.00240852,
+      "peak_price": 0.00762378,
+      "trough_price": 0.00240852,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -35.0,
+          "date": "2026-08-31"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -35.0,
+          "date": "2026-08-31"
+        }
+      },
+      "close_date": "2026-10-19",
+      "close_price": 0.00240852,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -68.4,
+      "peak_ret_pct": 0.0,
+      "shadow_t20_ret": -35.0,
+      "shadow_t30_ret": -35.0
+    },
+    {
+      "sym": "RED",
+      "name": "RedStone",
+      "cg_id": "redstone-oracles",
+      "entry_date": "2026-08-20",
+      "entry_price": 0.116833,
+      "last_price": 0.137051,
+      "peak_price": 0.180892,
+      "trough_price": 0.107252,
+      "score": 75,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": 17.3,
+          "date": "2026-10-19"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-19",
+      "close_price": 0.137051,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 17.3,
+      "peak_ret_pct": 54.8,
+      "shadow_t20_ret": 17.3,
+      "shadow_t30_ret": 17.3
+    },
+    {
+      "sym": "GRVT",
+      "name": "GRVT Token",
+      "cg_id": "grvt",
+      "entry_date": "2026-08-24",
+      "entry_price": 0.21598,
+      "last_price": 0.203481,
+      "peak_price": 0.24531,
+      "trough_price": 0.160993,
+      "score": 75,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -25.5,
+          "date": "2026-09-03"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-26",
+      "close_price": 0.203481,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -5.8,
+      "peak_ret_pct": 13.6,
+      "shadow_t20_ret": -25.5,
+      "shadow_t30_ret": -5.8
+    },
+    {
+      "sym": "MOVE",
+      "name": "Movement",
+      "cg_id": "movement",
+      "entry_date": "2026-08-24",
+      "entry_price": 0.00805907,
+      "last_price": 0.00682351,
+      "peak_price": 0.00994924,
+      "trough_price": 0.00682351,
+      "score": 70,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -3.4,
+          "date": "2026-10-15"
+        },
+        "t30": {
+          "fired": true,
+          "ret": -15.3,
+          "date": "2026-10-26"
+        }
+      },
+      "close_date": "2026-10-26",
+      "close_price": 0.00682351,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -15.3,
+      "peak_ret_pct": 23.5,
+      "shadow_t20_ret": -3.4,
+      "shadow_t30_ret": -15.3
+    },
+    {
+      "sym": "GWEI",
+      "name": "ETHGas",
+      "cg_id": "ethgas-2",
+      "entry_date": "2026-08-24",
+      "entry_price": 0.02279538,
+      "last_price": 0.02119148,
+      "peak_price": 0.02560341,
+      "trough_price": 0.01912518,
+      "score": 65,
+      "revolut": false,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 63,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": -12.0,
+          "date": "2026-09-17"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-26",
+      "close_price": 0.02119148,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": -7.0,
+      "peak_ret_pct": 12.3,
+      "shadow_t20_ret": -12.0,
+      "shadow_t30_ret": -7.0
+    },
+    {
+      "sym": "KERNEL",
+      "name": "KernelDAO",
+      "cg_id": "kernel-2",
+      "entry_date": "2026-08-27",
+      "entry_price": 0.0400402,
+      "last_price": 0.04742355,
+      "peak_price": 0.054684,
+      "trough_price": 0.03713542,
+      "score": 70,
+      "revolut": true,
+      "stake_usd": 100,
+      "miss": 0,
+      "age_days": 60,
+      "shadow": {
+        "t20": {
+          "fired": true,
+          "ret": 7.6,
+          "date": "2026-10-15"
+        },
+        "t30": {
+          "fired": false,
+          "ret": null,
+          "date": null
+        }
+      },
+      "close_date": "2026-10-26",
+      "close_price": 0.04742355,
+      "close_reason": "выдержка 60 дн",
+      "ret_pct": 18.4,
+      "peak_ret_pct": 36.6,
+      "shadow_t20_ret": 7.6,
+      "shadow_t30_ret": 18.4
+    }
+  ],
+  "meta": {
+    "created": "2026-07-14T16:02:09.800031+00:00",
+    "note": "виртуальный форвард-тест; реальных денег нет"
+  }
+}
